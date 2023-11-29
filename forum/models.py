@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-"""Variables and Tuples for choices/ dropdown menus"""
+#Variables and Tuples for choices/ dropdown menus
 ASB = 'ASB'
 ROADS = 'Roads'
 TRAFFIC = 'Traffic'
@@ -46,78 +46,70 @@ STATUS_CHOICES = (
     (UNRESOLVED, 'Not resolved'),
 )
 
+IMAGE_UPLOADED = 'Image uploaded'
+IMAGE_NOT_UPLOADED = 'Image not uploaded'
+IMAGE_UPLOAD_CHOICES = (
+    (IMAGE_UPLOADED, 'Image Uploaded'),
+    (IMAGE_NOT_UPLOADED, 'Image not uploaded'),
+)
+
+IS_URGENT = 'Is urgent'
+IS_NOT_URGENT = 'Is not urgent'
+URGENT_CHOICES = (
+    (IS_URGENT, 'Needs urgent attention, potential danger'),
+    (IS_NOT_URGENT, 'Not an urgent or high risk issue')
+)
+
 """Models"""
-class Username(models.Model):
-    """Fields for the Username database module"""
-    username = models.EmailField(max_length=100)
-    password = models.CharField(max_length=20, unique=True)
+class UserAccount(models.Model):
+    """Fields for the User Account database module"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     postcode = models.CharField(max_length=8)
 
 class IssueType(models.Model):
     """Fields for the TypeIssue database module with dropdown menu"""
-    issue_type = models.CharField(choices=ISSUE_TYPE_CHOICES)
+    issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
 
-class DeptResponsible(models.Model):
+class DeptNotified(models.Model):
     """Fields for the Department Responsible for the reported issue"""
-    department_responsible = models.CharField(choices=DEPARTMENT_CHOICES)
-    description = models.CharField(max_length=150)
-
-class Status(models.Model):
-    """Fields for the Status database module with dropdown menu"""
-    status = models.CharField(choices=STATUS_CHOICES)
-
-class Approved(models.Model):
-    """Fields for whether report and comment is approved"""
-    approved = models.CharField(choices=APPROVED_CHOICES)
+    dept_notified = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
 
 class Issue(models.Model):
     """Fields for Issues and Incidents (Issue) module"""
-    username = models.ForeignKey(
-        Username,
+    user = models.ForeignKey(
+        User,
         on_delete=models.CASCADE
         )
-    type_issue = models.ForeignKey(
+    issue_type = models.ForeignKey(
         IssueType,
-        on_delete=models.CASCADE,
-        choices=ISSUE_TYPE_CHOICES
+        on_delete=models.CASCADE
         )
     phone = models.CharField(max_length=12, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    date_of_issue = models.DateTimeField(auto_now=False, auto_now_add=False)
+    date_of_issue = models.DateTimeField()
     issue_title = models.CharField(max_length=80, blank=False)
     issue_content = models.TextField(max_length=1500)
-    issue_location = models.CharField(blank=False)
-    image_uploaded = models.BooleanField()
-    is_urgent = models.BooleanField()
-    dept_notified = models.ManyToManyField(DeptResponsible, blank=True)
+    issue_location = models.CharField(max_length=100, blank=False)
+    image_uploaded = models.CharField(choices=IMAGE_UPLOAD_CHOICES)
+    image = CloudinaryField('image')
+    is_urgent = models.CharField(choices=URGENT_CHOICES)
+    dept_notified = models.ManyToManyField(DeptNotified, blank=True)
     notes_about_notifications = models.TextField(max_length=200)
-    status = models.ForeignKey(
-        Status,
-        on_delete=models.CASCADE,
-        choices=STATUS_CHOICES
-        )
-    approved = models.ForeignKey(
-        Approved,
-        on_delete=models.CASCADE,
-        choices=APPROVED_CHOICES
-        )
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    approved = models.CharField(max_length=20, choices=APPROVED_CHOICES)
 
 class Comment(models.Model):
     """Fields for the Comment database module"""
-    username = models.ForeignKey(Username, on_delete=models.CASCADE)
+    user_account = models.ForeignKey(User, on_delete=models.CASCADE)
     comment_title = models.CharField(max_length=80, blank=False)
     comment_content = models.TextField(max_length=250)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    comment_approved = models.ForeignKey(
-        Approved,
-        on_delete=models.CASCADE,
-        choices=APPROVED_CHOICES
-        )
+    comment_approved = models.CharField(choices=APPROVED_CHOICES)
 
 class ContactUs(models.Model):
     """Fields for Contacting the developer"""
-    email = models.EmailField()
-    phone = models.CharField(max_length=12, blank=True)
+    enquirer_email = models.EmailField(verbose_name='Enquirer email address')
+    enquirer_phone = models.CharField(max_length=12, blank=True)
     query = models.TextField(max_length=500)
