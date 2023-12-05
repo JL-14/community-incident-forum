@@ -63,7 +63,7 @@ URGENT_CHOICES = (
 """Models"""
 class UserAccount(models.Model):
     """Fields for the User Account database module"""
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     postcode = models.CharField(max_length=8)
 
 class IssueType(models.Model):
@@ -91,9 +91,15 @@ class Issue(models.Model):
     issue_title = models.CharField(max_length=80, blank=False)
     issue_content = models.TextField(max_length=1500)
     issue_location = models.CharField(max_length=100, blank=False)
-    image_uploaded = models.CharField(choices=IMAGE_UPLOAD_CHOICES)
+    image_uploaded = models.CharField(
+        max_length=18,
+        choices=IMAGE_UPLOAD_CHOICES
+        )
     image = CloudinaryField('image')
-    is_urgent = models.CharField(choices=URGENT_CHOICES)
+    is_urgent = models.CharField(
+        max_length=13,
+        choices=URGENT_CHOICES
+        )
     dept_notified = models.ManyToManyField(DeptNotified, blank=True)
     notes_about_notifications = models.TextField(max_length=200)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
@@ -106,7 +112,10 @@ class Comment(models.Model):
     comment_content = models.TextField(max_length=250)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    comment_approved = models.CharField(choices=APPROVED_CHOICES)
+    comment_approved = models.CharField(
+        max_length=8,
+        choices=APPROVED_CHOICES
+        )
 
 class ContactUs(models.Model):
     """Fields for Contacting the developer"""
