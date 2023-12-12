@@ -66,10 +66,6 @@ class UserAccount(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     postcode = models.CharField(max_length=8)
 
-class IssueType(models.Model):
-    """Fields for the TypeIssue database module with dropdown menu"""
-    issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
-
 class DeptNotified(models.Model):
     """Fields for the Department Responsible for the reported issue"""
     dept_notified = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
@@ -80,10 +76,7 @@ class Issue(models.Model):
         User,
         on_delete=models.CASCADE
         )
-    issue_type = models.ForeignKey(
-        IssueType,
-        on_delete=models.CASCADE
-        )
+    issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
     phone = models.CharField(max_length=12, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
