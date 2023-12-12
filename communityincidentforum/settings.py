@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['8000-jl14-communityinciden-fuudqhlrtxk.ws-eu106.gitpod.io',
 'community-incident-forum-75e7791f6b68.herokuapp.com', 
 'localhost',]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jl14-communityinciden-fuudqhlrtxk.ws-eu106.gitpod.io'
+]
 
 # Application definition
 
