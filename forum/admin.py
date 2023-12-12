@@ -1,11 +1,12 @@
 from django.contrib import admin
-from .models import UserAccount, IssueType, DeptNotified, Issue
 from django_summernote.admin import SummernoteModelAdmin
+from .models import UserAccount, IssueType, DeptNotified, Issue
 
-class TextField(SummernoteModelAdmin):
+@admin.register(Issue, UserAccount, IssueType, DeptNotified)
+class TextAdmin(SummernoteModelAdmin):
     summernote_fields = ('issue_content', 'notes_about_notifications')
 
-admin.site.register(UserAccount)
-admin.site.register(IssueType)
-admin.site.register(DeptNotified)
-admin.site.register(Issue)
+# admin.site.register(UserAccount)
+# admin.site.register(IssueType)
+# admin.site.register(DeptNotified)
+# admin.site.register(Issue)
