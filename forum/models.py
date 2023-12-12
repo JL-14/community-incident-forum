@@ -86,9 +86,10 @@ class Issue(models.Model):
     issue_location = models.CharField(max_length=100, blank=False)
     image_uploaded = models.CharField(
         max_length=18,
-        choices=IMAGE_UPLOAD_CHOICES
+        choices=IMAGE_UPLOAD_CHOICES,
+        blank=True
         )
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', blank=True)
     is_urgent = models.CharField(
         max_length=13,
         choices=URGENT_CHOICES
