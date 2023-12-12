@@ -49,8 +49,8 @@ STATUS_CHOICES = (
 IMAGE_UPLOADED = 'Image uploaded'
 IMAGE_NOT_UPLOADED = 'Image not uploaded'
 IMAGE_UPLOAD_CHOICES = (
-    (IMAGE_UPLOADED, 'Image Uploaded'),
-    (IMAGE_NOT_UPLOADED, 'Image not uploaded'),
+    (IMAGE_UPLOADED, 'Yes'),
+    (IMAGE_NOT_UPLOADED, 'No'),
 )
 
 IS_URGENT = 'Is urgent'
