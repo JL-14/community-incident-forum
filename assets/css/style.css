@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* min-height: 100vh; */
+    width: 100%;
+    background-color: #fff;
+    background-image: url("../images/reigate-map-illustrated.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Text styling*/
+.text {
+    font-family: 'Poppins', sans-serif;
+    color: #faef5d;
+    padding-top: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Header container*/
+.header {
+    height: auto;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d2b53;
+    flex-direction: column;
+    z-index: 99;
+}
+
+#title {
+    color: #e9f1f7;
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Logo*/
+#logo {
+    position: absolute;
+    left: 2%;
+}
+
+/*Nav-links*/
+.nav-links {
+    font-family: 'Poppins', sans-serif;
+    font-size: 150%;
+    color: #e9f1f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 150%;
+    color: #e9f1f7;
+    float: right;
+    list-style-type: none;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-links a:hover {
+    border-bottom: 1px solid #faef5d;
+}
+
+/*HOME PAGE*/
+/*Cover text and Intro section*/
+#cover-text {
+    background: rgba(233,241,247, 0.9);
+    font-size: 220%;
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b53;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    height: auto;
+    top: 20%;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    position: absolute;
+}
+
+#cover-text h3 {
+    font-size: 100%;
+}
+
+.cover-section {
+    font-family: 'Poppins', sans-serif;
+    color: #faef5d;
+    padding-top: 25%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+}
+
+.first-section {
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b53;
+    padding-top: 2%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #e9f1f7;
+    flex-direction: column;
+    padding-bottom: 3%;
+}
+
+.first-section-title {
+    font-size: 200%;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.intro-text {
+    font-size: 150%;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px;
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text img {
+    margin-left: 5%;
+    border-radius: 3%;
+    width: 40%;
+    height: auto;
+    margin-top: 5%;
+}
+
+.why-this-site {
+    align-items: column;
+}
+
+.rationale {
+    font-size: 160%;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px;
+    margin-top: 40px;
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.rationale img {
+    margin-right: 5%;
+    border-radius: 3%;
+    width: 40%;
+    height: auto;
+}
+
+.rationale-text {
+    flex-direction: column;
+}
+
+.disclaimer {
+    font-size: 160%;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px;
+    margin-top: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    border: solid 2px;
+    background-color: #fbceb1;
+    margin-top: 3%;
+}
+
+.second-section {
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b53;
+    padding-top: 20px;
+    padding-bottom: 3%;
+    background-color: #fff;
+    width: 100%;
+}
+
+.forum-details {
+    font-size: 160%;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px;
+    margin-top: 40px;
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.forum-details img {
+    margin-right: 5%;
+    border-radius: 3%;
+    width: 40%;
+    height: auto;
+}
+
+.forum-details-text {
+    flex-direction: column;
+}
+
+.queries {
+    font-size: 160%;
+    font-family: 'Poppins', sans-serif;
+    padding: 25px;
+    margin-top: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: flex-start;
+}
+
+.third-section {
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b53;
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #e9f1f7;
+    flex-direction: column;
+    padding-bottom: 5%;
+}
+
+.latest-reports {
+    font-size: 160%;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #1d2b53;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin-left: 15%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap; 
+    flex-direction: column;
+}
+
+/*Report-links from Home Page*/
+.report-links {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    padding: 25px;
+    margin-top: 25px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.report-links li {
+    list-style-type: none;
+    padding: 15px;
+    display: flex;
+    width: 25%;
+    padding: 3%;
+    background-color: #fff;
+    border: 2px;
+    outline: 4px double #1d2b53;
+    border-radius: 2%;
+    justify-content: center;
+}
+
+.report-links li a {
+    color: inherit;
+}
+
+.report-links a:hover {
+    border-bottom: 4px solid #1d2b53;
+}
+
+/*FOOTER SECTION*/
+footer {
+    background-color: #1d2b53;
+    font-family: 'Poppins', sans-serif;
+    font-size: 130%;
+    padding-top: 10px;
+    text-align: center;
+    display: flex;
+    position: fixed;
+    height: auto;
+    width: 100%;
+    justify-content: space-evenly;
+    bottom: 0;
+    left: 0;
+    z-index: 98;
+}
+
+footer>span {
+    color: #e9f1f7;
+}
+
+footer>a {
+    color: #e9f1f7;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 100%;
+}
+
+footer a:hover {
+    border-bottom: 2px solid #faef5d;
+}
+
+#socialmedia {
+    color: #e9f1f7;
+}
+
+#socialmedia dd {
+    color: #e9f1f7;
+    font-size: 80%;
+    list-style-type: none;
+    justify-content: space-around;
+    display: inline-flex;
+    margin-left: 5px;
+}
+
+#socialmedia dd a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#socialmedia dd a:hover {
+    border-bottom: 2px solid #faef5d;
+}
+
+/* MEDIA QUERIES*/
+/* For large screens 2200px wide and down */
+@media screen and (max-width: 2200px) {
+    .nav-links {
+        font-size: 120%;
+    }
+
+    #cover-text {
+        font-size: 180%;
+    }
+
+    p {
+        font-size: 75%;
+    }
+
+    h2 {
+        font-size: 120%;
+    }
+
+    #report-one,
+    #report-two,
+    #report-three {
+        font-size: 70%;
+    }
+}
+
+/* For large to medium screens 1600px wide and down */
+@media screen and (max-width: 1600px) {
+    .nav-links {
+        font-size: 80%;
+    }
+
+    #title {
+        font-size: 150%;
+    }
+
+    #cover-text {
+        top: 15%;
+    }
+
+    #cover-text h3 {
+        font-size: 80%;
+    }
+
+    p {
+        font-size: 75%;
+    }
+
+    h2 {
+        font-size: 100%;
+    }
+
+    #report-one,
+    #report-two,
+    #report-three {
+        font-size: 60%;
+    }
+
+    .footer {
+        font-size: 100%;
+    }
+
+}
+
+/* For small-medium screens sizes from 1250px wide and down */
+@media screen and (max-width: 1250px) {
+    .nav-links {
+        font-size: 60%;
+    }
+
+    #title {
+        font-size: 120%;
+    }
+
+    #cover-text {
+        top: 12%;
+        left: 5%;
+        width: 90%;
+    }
+
+    #cover-text h3 {
+        font-size: 60%;
+    }
+
+    p {
+        font-size: 75%;
+    }
+
+    h2 {
+        font-size: 80%;
+    }
+
+    #report-one,
+    #report-two,
+    #report-three {
+        font-size: 60%;
+    }
+}
+
+/* For small screens sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+    .nav-links {
+        font-size: 60%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    p {
+        font-size: 65%;
+    }
+
+    h2 {
+        font-size: 70%;
+    }
+
+    #title {
+        font-size: 90%;
+    }
+
+    #cover-text {
+        top: 15%;
+        left: 0;
+        width: 100%;
+    }
+
+    #cover-text h3 {
+        font-size: 60%;
+    }
+
+    .intro-text {
+        margin-top: 30%;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .intro-text img {
+        width: 100%;
+    }
+
+    .rationale {
+        margin-top: 10%;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .rationale img {
+        display: none;
+    }
+
+    .forum-details {
+        margin-top: 10%;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .forum-details img {
+        width: 100%;
+    }
+
+    .queries {
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .third-section {
+        padding-bottom: 50%;
+    }
+
+    .latest-reports {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .report-links {
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2%;
+    }
+
+    #report-one,
+    #report-two,
+    #report-three {
+        font-size: 45%;
+    }
+
+    footer a, dt, span {
+        font-size: 60%;
+    }
+
+    #socialmedia dd a {
+        font-size: 50%;
+    }
+}
