@@ -1,59 +1,198 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reigate Community Issues & Incidents">
+    <meta name="keywords" content="Reigate, issues, incidents, reporting">
+    <meta name="author" content="Jorgen Lovbakke">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Reigate Community Issues and Incidents.index</title>
+</head>
+<body>
+    <!--Header section -Title, Navbar-->
+    <header class="header">
+        <div id="title">
+            <h1>Reigate Community Issues & Incidents</h1>
         </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-{%endblock%}
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" aria-label="Click here to go to log in or register.">
+                        Login / Register
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" aria-label="Click here to go to the top of the home page.">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html" aria-label="Click here to go to view existing reports.">
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html"
+                        aria-label="Click here to go to the contact page.">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!--Cover text-->
+        <section class="cover-section">
+            <div id="cover-text">
+                <h2><em><strong>Welcome to the Reigate Community Issues and Incidents Forum</strong></h2>
+                <hr>
+                <h3>-For letting other residents know about issues and incidents in and around Reigate!</em></h3>
+            </div>
+            <div class="cover-section-gap">
+                
+            </div>
+        </section>
+        <!--Intro paragraph-->
+        <section class="first-section">
+            <div class="intro-text">
+                <section class="why-this-site">
+                    <h2>
+                        <strong>Why this site?</strong>
+                    </h2>
+                    <br>
+                    <p>
+                        Have you ever wondered what is happening in a particular place or at a particular time? Why the road is closed,
+                        whether there is anything to be aware of on a certain route (potholes, overhanging branches, uneven pavements)? 
+                    <br>
+                    <br>
+                        Or maybe you have had a positive or negative experience in a particular location you wish to let others know about?
+                    <br>
+                    <br>
+                        That's where we come in.
+                    </p>
+                </section>
+                <img src="assets/images/road-closed.jpg" alt="Image of a red road closed sign in the road">
+            </div>           
+            <div class="rationale">
+                <img src="assets/images/reigate-bell-street-junction.jpg" alt="Image of the junction between Bell Street and Reigate High Street">
+                <section class="rationale-text">
+                    <h2>
+                        <strong>Who this site is for</strong>
+                    </h2>
+                    <br>
+                    <p>
+                        The Reigate Community Issues and Incidents Forum is intended for use by residents (and visitors/ commuters, etc)
+                        to raise issues and incidents to the attention of others, empowering residents to make informed decisions about route
+                        choices, issues to be aware of, and importantly of hazards in the local environment.
+                    </p>
+                </section>
+            </div>
+            <div class="disclaimer">
+                <h2>
+                    <strong>Experiencing an emergency?</strong>
+                </h2>
+                <br>
+                <p>
+                    Please note that this forum is NOT linked to the emergency services or to local authorities. If you are experiencing
+                    an issue which requires immediate attention or intervention, <strong>please call 999 or the relevant council service!</strong>
+                </p>
+            </div>
+        </section>
+        <section class="second-section">
+            <div class="forum-details">
+                <img src="assets/images/fallen-tree.jpg" alt="Image of a fallen tree in the road">
+                <section class="forum-details-text">
+                    <h2>
+                        How to use the site
+                    </h2>
+                    <br>
+                    <p>
+                        This forum is maintained by Reigate residents for Reigate residents and visitors. The forum is mediated, and in order to
+                        post a report of an incident or issue you need to register and be logged in. 
+                        <br>
+                        <br>
+                        Every report is reviewed and, where possible, verified.
+                        This is to avoid incorrect or ill-intended content from being posted, but may lead to a slight delay between a report being posted
+                        and appearing on the forum.
+                    </p>
+                </section>
+            </div>
+            <div class="queries">
+                <h2>
+                    Any questions?
+                </h2>
+                <br>
+                <p>
+                    If you have any questions, queries, or suggestions, or want to know more about the forum, please do get in touch
+                    through the Contact Us link at the top of the page!
+                </p>
+            </div>
+        </section>
+        <!--Latest reports-->
+        <section class="third-section">
+            <div class="latest-reports">
+                <h2>
+                    Latest reports
+                </h2>
+                <br>
+                <p>
+                    The latest reports received about issues and incidents around Reigate are:
+                </p>
+                <ul class="report-links">
+                    <li id="report-one">
+                        <a href="#" style="color: #1d2b53"
+                            aria-label="Link to details about the most recent report.">
+                            <em>Report 1: </em>
+                        </a>
+                    </li>
+                    <li id="report-two">
+                        <a href="#" style="color: #1d2b53"
+                            aria-label="Link to details about the second most recent report.">
+                            <em>Report 2: </em>
+                        </a>
+                    </li>
+                    <li id="report-three">
+                        <a href="#" style="color: #1d2b53"
+                            aria-label="Link to details about the third most recent report.">
+                            <em>Report 3: </em>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" aria-label="Click link to go to the top of the home page.">
+            Home
+        </a>
+        <dl id="socialmedia">
+            <dt>Find us on:</dt>
+            <dd>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                    aria-label="Find us on Facebook (link opens in new tab)">
+                    Facebook
+                </a>
+            </dd>
+            <dd>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener"
+                    aria-label="Find us on Twitter (link opens in new tab)">
+                    Twitter
+                </a>
+            </dd>
+            <dd>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener"
+                    aria-label="Find us on Instagram (link opens in new tab)">
+                    Instagram
+                </a>
+            </dd>
+        </dl>
+        <a href="contact.html" aria-label="Click link to go to the contact form.">
+            Contact Us
+        </a>
+        <span>Copyright © Jorgen Lovbakke 2024</span>
+    </footer>
+</body>
+</html>
