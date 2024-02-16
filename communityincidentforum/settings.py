@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jl14-communityinciden-mdkyok2sobs.ws-eu107.gitpod.io',
+'127.0.0.1',
 'community-incident-forum-75e7791f6b68.herokuapp.com', 
 'localhost',]
 
