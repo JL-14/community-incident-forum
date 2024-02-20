@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1>Reports list</h1>
+    <h1>Issue and Incident List</h1>
     {% for issue in object_list %}
-    <h2>{{issue.title}}</h2>
+    <h2>{{issue.issue_title}}</h2>
     <p>{{issue.date_of_issue}}</p>
     <p>Author: {{issue.user}}</p>
     {% endfor %}

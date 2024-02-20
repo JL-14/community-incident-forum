@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Issue
 
 
-class ReportList (generic.ListView):
+class IssueList (generic.ListView):
     model = Issue
     # queryset = Issue.objects.filter(approved = 1).order_by('-date_of_issue')
     # template_name = 'index.html'
