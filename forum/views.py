@@ -4,7 +4,7 @@ from .models import Issue
 
 
 class IssueList (generic.ListView):
-    model = Issue
-    # queryset = Issue.objects.filter(approved = 1).order_by('-date_of_issue')
-    # template_name = 'index.html'
+    # model = Issue
+    queryset = Issue.objects.order_by('-date_of_issue')
+    template_name = 'issue_list.html'
     # paginate_by = 6

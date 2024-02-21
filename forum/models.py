@@ -95,7 +95,7 @@ class Issue(models.Model):
         choices=URGENT_CHOICES
         )
     dept_notified = models.ManyToManyField(DeptNotified, blank=True)
-    notes_about_notifications = models.TextField(max_length=200)
+    notes_about_notifications = models.TextField(max_length=200, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     approved = models.CharField(max_length=20, choices=APPROVED_CHOICES)
 
