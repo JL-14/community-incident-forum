@@ -6,5 +6,6 @@ from .models import Issue
 class IssueList (generic.ListView):
     # model = Issue
     queryset = Issue.objects.order_by('-date_of_issue')
-    template_name = 'issue_list.html'
-    # paginate_by = 6
+    # template_name = 'issue_list.html'
+    template_name = 'index.html'
+    paginate_by = 6
