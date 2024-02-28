@@ -8,6 +8,8 @@ class TextAdmin(SummernoteModelAdmin):
     list_display = ('date_of_issue', 'issue_title', 'issue_type', 'issue_location')
     search_fields = ['issue_title', 'issue_location']
     list_filter = ('issue_type', 'date_of_issue', 'status')
+    prepopulated_fields = {'slug': ('issue_title',)}
+    readonly_fields = ['slug']
     summernote_fields = ('issue_content', 'notes_about_notifications')
 
 admin.site.register(UserAccount)
