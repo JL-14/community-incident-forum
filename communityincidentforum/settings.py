@@ -35,13 +35,13 @@ ALLOWED_HOSTS = ['8000-jl14-communityinciden-mdkyok2sobs.ws-eu107.gitpod.io',
 'localhost',
 '8000-jl14-communityinciden-hx10yg5oxjv.ws-eu108.gitpod.io',
 '8000-jl14-communityinciden-rtz5trbpxri.ws-eu108.gitpod.io',
+ '8000-jl14-communityinciden-32dcrhqwhbp.ws-eu108.gitpod.io',
+'*.gitpod.io',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jl14-communityinciden-fuudqhlrtxk.ws-eu107.gitpod.io',
+    'https://*.gitpod.io',
     'https://*.herokuapp.com',
-    'https://8000-jl14-communityinciden-hx10yg5oxjv.ws-eu108.gitpod.io',
-    'https://8000-jl14-communityinciden-rtz5trbpxri.ws-eu108.gitpod.io',
 ]
 
 # Application definition
