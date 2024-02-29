@@ -82,7 +82,7 @@ class Issue(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     date_of_issue = models.DateTimeField()
     issue_title = models.CharField(max_length=80, blank=False)
-    slug = models.SlugField(max_length=200, unique=True, default = '')
+    slug = models.SlugField(max_length=200, default='')
     issue_content = models.TextField(max_length=1500)
     issue_location = models.CharField(max_length=100, blank=False)
     image_uploaded = models.CharField(
