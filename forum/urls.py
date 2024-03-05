@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path("", views.IssueList.as_view(), name="home"),
+    path("<slug:slug>/", views.report_detail, name="report-detail"),
 ]

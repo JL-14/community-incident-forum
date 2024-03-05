@@ -18,7 +18,7 @@
                                     <p class="author">Author: {{ issue.user }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'report-detail' issue.slug %}" class="report-link">
                                 <h2 class="card-title">{{ issue.issue_title }}</h2>
                             </a>
 

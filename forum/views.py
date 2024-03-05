@@ -28,5 +28,5 @@ def report_detail(request, slug):
     return render(
         request,
         "forum/report_detail.html",
-        {"issue": report},
+        {"issue": Issue},
     )
