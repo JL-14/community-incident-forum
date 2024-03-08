@@ -22,11 +22,11 @@ def report_detail(request, slug):
     :template:`forum/report_detail.html`
     """
 
-    queryset = Issue.objects.filter(approved=1)
+    queryset = Issue.objects.all()
     report = get_object_or_404(queryset, slug=slug)
 
     return render(
         request,
         "forum/report_detail.html",
-        {"issue": Issue},
+        {"issue": report},
     )
