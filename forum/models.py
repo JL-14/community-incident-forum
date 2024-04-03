@@ -101,16 +101,19 @@ class Issue(models.Model):
     approved = models.CharField(max_length=20, choices=APPROVED_CHOICES)
 
 class Comment(models.Model):
-    """Fields for the Comment database module"""
-    user_account = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment_title = models.CharField(max_length=80, blank=False)
-    comment_content = models.TextField(max_length=250)
+    comment_issue = models.ForeignKey(Issue, on_delete=models.CASCADE,
+                             related_name="comments", null=False, blank=False)
+    comment_author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    comment_content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    comment_approved = models.CharField(
-        max_length=8,
-        choices=APPROVED_CHOICES
-        )
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.comment_content} by {self.comment_author}"
 
 class ContactUs(models.Model):
     """Fields for Contacting the developer"""
