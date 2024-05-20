@@ -100,6 +100,9 @@ class Issue(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     approved = models.CharField(max_length=20, choices=APPROVED_CHOICES)
 
+    def __str__(self):
+        return str(self.issue_title) if self.issue_title else "No title"
+
 class Comment(models.Model):
     comment_issue = models.ForeignKey(Issue, on_delete=models.CASCADE,
                              related_name="comments", null=False, blank=False)

@@ -11,25 +11,24 @@ class IssueList (generic.ListView):
     paginate_by = 6
 
 def report_detail(request, slug):
-    queryset = Issue.objects.all()
-    report = get_object_or_404(queryset, slug=slug)
+    # queryset = Issue.objects.all()
+    report = get_object_or_404(Issue, slug=slug)
     comments = report.comments.all().order_by("-created_on")
     comment_count = report.comments.filter(approved=True).count()
-    comment_form = CommentForm()
+    # comment_form = CommentForm()
 
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
+        comment_form = CommentForm(data=request.POST, issue=report)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.comment_author = request.user
-            comment.report = report
+            comment.comment_issue = report
             comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
-    )
-
-    comment_form = CommentForm()
+            messages.success(request, 'Comment submitted and awaiting approval.')
+        else:
+            messages.error(request, 'Error submitting comment, please try again.')
+    else:
+        comment_form = CommentForm(issue=report)
 
     return render(
         request,
