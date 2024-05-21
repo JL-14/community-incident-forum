@@ -11,11 +11,10 @@ class IssueList (generic.ListView):
     paginate_by = 6
 
 def report_detail(request, slug):
-    # queryset = Issue.objects.all()
     report = get_object_or_404(Issue, slug=slug)
     comments = report.comments.all().order_by("-created_on")
     comment_count = report.comments.filter(approved=True).count()
-    # comment_form = CommentForm()
+    comment_form = CommentForm()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST, issue=report)

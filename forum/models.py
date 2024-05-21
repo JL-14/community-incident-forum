@@ -70,6 +70,9 @@ class DeptNotified(models.Model):
     """Fields for the Department Responsible for the reported issue"""
     dept_notified = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
 
+    def __str__(self):
+        return self.dept_notified
+
 class Issue(models.Model):
     """Fields for Issues and Incidents (Issue) module"""
     user = models.ForeignKey(
