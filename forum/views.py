@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Issue
+from django.http import HttpResponseRedirect
+from .models import Issue, Comment
 from .forms import CommentForm
 
 
@@ -24,6 +25,7 @@ def report_detail(request, slug):
             comment.comment_issue = report
             comment.save()
             messages.success(request, 'Comment submitted and awaiting approval.')
+            comment_form = CommentForm(issue=report)
         else:
             messages.error(request, 'Error submitting comment, please try again.')
     else:
@@ -39,3 +41,21 @@ def report_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+def comment_edit(request, slug, comment_id):
+    """To edit comments"""
+    if request.method == "POST":
+        queryset = Issue.objects.filter(approved=True)
+        report = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+        if comment_form.is_valid() and comment.comment_author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.report = report
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment')
+
+    return HttpResponseRedirect(reverse('report_detail', args=[slug]))

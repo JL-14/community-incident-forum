@@ -7,11 +7,11 @@ class CommentForm(forms.ModelForm):
         fields = ['comment_issue', 'comment_content']
 
     def __init__(self, *args, **kwargs):
-        report = kwargs.pop('issue', None)
+        issue = kwargs.pop('issue', None)
         super().__init__(*args, **kwargs)
-        if report:
-            self.fields['comment_issue'].initial = report
-            self.fields['comment_issue'].widget = forms.HiddenInput()
+        if issue:
+            self.fields['comment_issue'].initial = issue
+        self.fields['comment_issue'].widget = forms.HiddenInput()
 
     def clean_comment_issue(self):
         return self.cleaned_data['comment_issue']
