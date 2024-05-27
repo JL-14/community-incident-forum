@@ -73,8 +73,6 @@
           <button class="btn btn-edit" comment_id="{{ comment.id }}">
             Edit
           </button>
-          <script src = "{% static 'js/comments.js' %}">
-          </script>
           {% endif %}
         </div>
         <!-- Our for loop ends here -->
@@ -94,6 +92,7 @@
             <button id="submitButton" type="submit"
                 class="btn btn-signup btn-lg">Submit</button>
             </form>
+
             {% else %}
             <p>Log in to leave a comment</p>
             {% endif %}
@@ -105,5 +104,7 @@
 {% endblock content %}
 
 {% block extras %}
+<script src = "{% static 'js/comments.js' %}">
+</script>
 
 {% endblock %}

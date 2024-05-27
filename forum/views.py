@@ -45,7 +45,7 @@ def report_detail(request, slug):
 def comment_edit(request, slug, comment_id):
     """To edit comments"""
     if request.method == "POST":
-        queryset = Issue.objects.filter(approved=True)
+        queryset = Issue.objects.all()
         report = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
@@ -58,4 +58,4 @@ def comment_edit(request, slug, comment_id):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating comment')
 
-    return HttpResponseRedirect(reverse('report_detail', args=[slug]))
+    return HttpResponseRedirect(reverse('report-detail', args=[slug]))
