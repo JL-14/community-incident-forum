@@ -17,6 +17,13 @@
                                 <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder">
                             </div>
                             <div class="image-container">
+                                {% if "placeholder" in issue.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/rcii-main-image.jpg' %}"
+                                  alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ issue.featured_image.url }}"
+                                  alt="{{ issue.title }}">
+                                {% endif %}                              
                                 <div class="image-flash">
                                     <p class="author">Author: {{ issue.user }}</p>
                                 </div>

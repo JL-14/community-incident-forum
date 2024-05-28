@@ -79,6 +79,7 @@ class Issue(models.Model):
         User,
         on_delete=models.CASCADE
         )
+    featured_image = CloudinaryField('image', default='placeholder')
     issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
     phone = models.CharField(max_length=12, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
