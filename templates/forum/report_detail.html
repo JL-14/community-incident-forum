@@ -13,7 +13,11 @@
                 <p class="post-subtitle">Author: {{ issue.user }} | Date of issue or incident: {{ issue.date_of_issue }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder">
+              {% if "placeholder" in issue.featured_image.url %}             
+              <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder">
+              {% else %}
+              <img src="{{ issue.featured_image.url }}" class="scale" alt="{{ issue.issue_title }}">
+              {% endif %}
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="list-image">
-                                <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder">
+                                <!-- <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder"> -->
                             </div>
                             <div class="image-container">
                                 {% if "placeholder" in issue.featured_image.url %}
@@ -22,7 +22,7 @@
                                   alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ issue.featured_image.url }}"
-                                  alt="{{ issue.title }}">
+                                  alt="{{ issue.issue_title }}">
                                 {% endif %}                              
                                 <div class="image-flash">
                                     <p class="author">Author: {{ issue.user }}</p>
