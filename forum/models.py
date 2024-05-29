@@ -46,13 +46,6 @@ STATUS_CHOICES = (
     (UNRESOLVED, 'Not resolved'),
 )
 
-IMAGE_UPLOADED = 'Image uploaded'
-IMAGE_NOT_UPLOADED = 'Image not uploaded'
-IMAGE_UPLOAD_CHOICES = (
-    (IMAGE_UPLOADED, 'Yes'),
-    (IMAGE_NOT_UPLOADED, 'No'),
-)
-
 IS_URGENT = 'Is urgent'
 IS_NOT_URGENT = 'Is not urgent'
 URGENT_CHOICES = (
@@ -79,9 +72,9 @@ class Issue(models.Model):
         User,
         on_delete=models.CASCADE
         )
-    featured_image = CloudinaryField('image', default='placeholder')
-    issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
     phone = models.CharField(max_length=12, blank=True)
+    issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
+
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     date_of_issue = models.DateTimeField()
@@ -89,16 +82,11 @@ class Issue(models.Model):
     slug = models.SlugField(max_length=200, default='')
     issue_content = models.TextField(max_length=1500)
     issue_location = models.CharField(max_length=100, blank=False)
-    image_uploaded = models.CharField(
-        max_length=18,
-        choices=IMAGE_UPLOAD_CHOICES,
-        blank=True
-        )
-    image = CloudinaryField('image', blank=True)
     is_urgent = models.CharField(
         max_length=13,
         choices=URGENT_CHOICES
         )
+    featured_image = CloudinaryField('image', default='placeholder')
     dept_notified = models.ManyToManyField(DeptNotified, blank=True)
     notes_about_notifications = models.TextField(max_length=200, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
