@@ -6,16 +6,13 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Reports Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for issue in object_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="list-image">
-                                <!-- <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder"> -->
-                            </div>
                             <div class="image-container">
                                 {% if "placeholder" in issue.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/rcii-main-image.jpg' %}"

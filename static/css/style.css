@@ -49,7 +49,7 @@ body {
 }
 
 .scale {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
@@ -63,15 +63,36 @@ body {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
-    height: 33vh;
     width: 100%;
+    height: 50vh;
+    background-image: url('/static/images/rcii-main-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: rgba(68, 82, 97, 0.9);
     color: white;
     position: relative;
+    padding: 4%;
+    text-align: center;
+}
+
+.title-text {
+    color: white;
+    position: relative;
+    padding: 4%;
+    text-align: center;
+}
+
+.masthead-list {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;   
 }
 
 .masthead-image {
@@ -79,7 +100,12 @@ body {
     overflow: hidden;
 }
 
-.masthead-image:after {
+.masthead-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -91,7 +117,7 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
+} */
 
 .report-link {
     text-decoration: none;
@@ -164,4 +190,15 @@ body {
 
 .success {
     background-color: #fff3cd;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.notification-container {
+    top: 70px;
 }

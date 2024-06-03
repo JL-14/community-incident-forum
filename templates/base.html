@@ -32,7 +32,7 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar py-5 navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Reigate Community Issues and Incidents</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -70,7 +70,7 @@
         </div>
     </nav>
     <!-- displaying Django messages -->
-    <div class="container">
+    <div class="container notification-container fixed-top mt-5 pt-3">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
@@ -85,11 +85,11 @@
         </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0 main-bg mt-5 pt-5">
         {% if user.is_authenticated %}
-        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        <p class="text-end mt-1">You are logged in as {{ user }}</p>
         {% else %}
-        <p class="text-end m-3">You are not logged in</p>
+        <p class="text-end mt-1">You are not logged in</p>
         {% endif %}
 
         {% block content %}
