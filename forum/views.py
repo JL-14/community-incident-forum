@@ -6,6 +6,9 @@ from .models import Issue, Comment
 from .forms import CommentForm
 
 
+def landing_page(request):
+    return render(request, 'forum/landing_page.html')
+
 class IssueList (generic.ListView):
     queryset = Issue.objects.order_by('-date_of_issue')
     template_name = 'forum/index.html'
