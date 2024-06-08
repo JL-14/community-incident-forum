@@ -49,6 +49,9 @@
                         <a class="nav-link {% if request.path == reportlist_url %}active{% endif %}" aria-current="page"
                             href="{% url 'reportlist' %}">Report List</a>
                     </li>
+                    <li class="contact">
+                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
