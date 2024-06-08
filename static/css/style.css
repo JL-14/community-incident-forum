@@ -76,6 +76,15 @@ body {
     color: white;
     position: relative;
     padding: 4%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.masthead-reportdetails {
+    background-color: rgba(68, 82, 97, 0.9);
+    color: white;
+    position: relative;
+    padding: 4%;
     text-align: center;
 }
 
@@ -87,9 +96,8 @@ body {
 }
 
 .cover-text {
-    color: #212529;
     text-align: center;
-    font-size: 150%;
+    font-size: 175%;
 }
 
 .masthead-list {
@@ -97,8 +105,8 @@ body {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
-    width: 100%;   
+    height: auto;
+    width: 100%;
 }
 
 .masthead-image {
@@ -107,8 +115,8 @@ body {
 }
 
 .masthead-image img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: auto;
 }
 
 /* .masthead-image:after {

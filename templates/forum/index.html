@@ -2,70 +2,81 @@
 {% load static %}
 {% block content %}
 
-<!-- index.html content starts here -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
                 <!-- Welcome heading -->
                 <h1 class="welcome-title">
-                    These are the latest issues and incidents reported in and around Reigate, ordered by when they happened or
-                    are planned.
+                    Welcome to the Reigate Community Issues and Incidents Forum
                 </h1>
+                <p class="welcome-subtitle">
+                    Information about issues and incidents in and around Reigate, from official sources and residents
+                </p>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <!-- Reports Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for issue in object_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in issue.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/rcii-main-image.jpg' %}"
-                                  alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ issue.featured_image.url }}"
-                                  alt="{{ issue.issue_title }}">
-                                {% endif %}                              
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ issue.user }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'report-detail' issue.slug %}" class="report-link">
-                                <h2 class="card-title">{{ issue.issue_title }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">Date & time of issue: {{ issue.date_of_issue }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                <h2 class="subhead">
+                    Why this site?
+                </h2>
+                <p class="intro-text">
+                    Ever wondered what is happening in a particular place or at a particular time? Why the road is
+                    closed, whether there is anything to be aware of on a certain route (potholes, overhanging branches,
+                    uneven pavements)?<br>
+                    Or maybe you have had a positive or negative experience in a particular location you wish to let
+                    others know about?<br>
+                    That is where we come in.
+                </p>
+                <h3 class="para-subhead">
+                    Who this site is for
+                </h3>
+                <p class="intro-text">
+                    The Reigate Community Issues and Incidents Forum is your one-stop shop for information about your
+                    local area. It is intended for use by residents (and visitors/commuters, etc) to bring together
+                    information from a range of official sources about issues and incidents that may affect your day.
+                    The aim is to empower residents to make informed decisions about day-to-day activities, identifying
+                    potential obstacles for your plans (whether they be train strikes, road closures, or other issues).
+                    <br>
+                    The site combines official notices from local authorities, transport services, and law enforcement
+                    with locally generated insights and observations.
+                </p>
+                <h2 class="para-subhead">
+                    Experiencing an emergency?
+                </h2>
+                <p class="intro-subhead">
+                    Please note that this forum is <span style="color: red"><strong>NOT</strong></span> linked to the
+                    emergency services or to local authorities. If you are experiencing an issue which requires
+                    immediate attention or intervention, <span style="color: red"><strong>please call 999 or the
+                    relevant council service!</strong></span>
+                </p>
+                <h3 class="subhead">
+                    How to use the site
+                </h3>
+                <p class="intro-subhead">
+                    This forum is maintained by Reigate residents for Reigate residents and visitors. The forum is 
+                    mediated, and in order to report an incident or issue you need to register and be 
+                    logged in. Once logged in there will be an option to contact us with a new report or comment on 
+                    existing reports.
+                    <br> 
+                    Every report and comment is reviewed and, where possible, verified. This is to avoid incorrect 
+                    content from being posted, but may lead to a slight delay between a report or comment being
+                    posted and appearing on the forum.
+                </p>
+                <h3 class="para-subhead">
+                    Any questions?
+                </h3>
+                <p class="intro-text">
+                    If you have any questions, queries, or suggestions, or want to know more about the forum, please
+                    do get in touch through the <a href="contact">Contact Us</a> link at the top of the page! 
+                </p>
             </div>
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
 
-<!-- index.html content ends here -->
 {% endblock %}
