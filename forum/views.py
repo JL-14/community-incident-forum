@@ -9,13 +9,16 @@ from .forms import CommentForm
 def landing_page(request):
     return render(request, 'forum/index.html')
 
+
 def contact(request):
     return render(request, 'forum/contact.html')
 
-class IssueList (generic.ListView):
+
+class IssueList(generic.ListView):
     queryset = Issue.objects.order_by('-date_of_issue')
     template_name = 'forum/report_list.html'
     paginate_by = 6
+
 
 def report_detail(request, slug):
     report = get_object_or_404(Issue, slug=slug)
@@ -48,6 +51,7 @@ def report_detail(request, slug):
         },
     )
 
+
 def comment_edit(request, slug, comment_id):
     """To edit comments"""
     if request.method == "POST":
@@ -66,9 +70,10 @@ def comment_edit(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('report-detail', args=[slug]))
 
+
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    View to delete comment
     """
     queryset = Issue.objects.all()
     report = get_object_or_404(queryset, slug=slug)
@@ -81,4 +86,3 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('report-detail', args=[slug]))
-

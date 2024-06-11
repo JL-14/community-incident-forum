@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-
-#Variables and Tuples for choices/ dropdown menus
+# Variables and tuples for choices/dropdown menus
 ASB = 'ASB'
 ROADS = 'Roads'
 TRAFFIC = 'Traffic'
@@ -50,31 +49,29 @@ IS_URGENT = 'Is urgent'
 IS_NOT_URGENT = 'Is not urgent'
 URGENT_CHOICES = (
     (IS_URGENT, 'Needs urgent attention, potential danger'),
-    (IS_NOT_URGENT, 'Not an urgent or high risk issue')
+    (IS_NOT_URGENT, 'Not an urgent or high risk issue'),
 )
 
-"""Models"""
+
 class UserAccount(models.Model):
     """Fields for the User Account database module"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     postcode = models.CharField(max_length=8)
+
 
 class DeptNotified(models.Model):
     """Fields for the Department Responsible for the reported issue"""
     dept_notified = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
 
     def __str__(self):
-        return self.dept_notified
+        return str(self.dept_notified) if self.dept_notified else "No Dept Notified"
+
 
 class Issue(models.Model):
     """Fields for Issues and Incidents (Issue) module"""
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE
-        )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=12, blank=True)
     issue_type = models.CharField(max_length=50, choices=ISSUE_TYPE_CHOICES)
-
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     date_of_issue = models.DateTimeField()
@@ -82,10 +79,7 @@ class Issue(models.Model):
     slug = models.SlugField(max_length=200, default='')
     issue_content = models.TextField(max_length=1500)
     issue_location = models.CharField(max_length=100, blank=False)
-    is_urgent = models.CharField(
-        max_length=13,
-        choices=URGENT_CHOICES
-        )
+    is_urgent = models.CharField(max_length=13, choices=URGENT_CHOICES)
     featured_image = CloudinaryField('image', default='placeholder')
     dept_notified = models.ManyToManyField(DeptNotified, blank=True)
     notes_about_notifications = models.TextField(max_length=200, blank=True)
@@ -95,11 +89,14 @@ class Issue(models.Model):
     def __str__(self):
         return str(self.issue_title) if self.issue_title else "No title"
 
+
 class Comment(models.Model):
-    comment_issue = models.ForeignKey(Issue, on_delete=models.CASCADE,
-                             related_name="comments", null=False, blank=False)
+    comment_issue = models.ForeignKey(
+        Issue, on_delete=models.CASCADE, related_name="comments", null=False, blank=False
+    )
     comment_author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
+        User, on_delete=models.CASCADE, related_name="commenter"
+    )
     comment_content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -109,6 +106,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.comment_content} by {self.comment_author}"
+
 
 class ContactUs(models.Model):
     """Fields for Contacting the developer"""

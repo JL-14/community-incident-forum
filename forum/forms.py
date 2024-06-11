@@ -1,6 +1,7 @@
 from django import forms
 from .models import Comment, Issue
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -26,4 +27,6 @@ class AdminCommentForm(forms.ModelForm):
         issue = kwargs.pop('issue', None)
         super().__init__(*args, **kwargs)
         self.fields['comment_issue'].queryset = Issue.objects.all()
-        self.fields['comment_issue'].label_from_instance = lambda obj: obj.issue_title
+        self.fields['comment_issue'].label_from_instance = (
+            lambda obj: obj.issue_title
+        )
