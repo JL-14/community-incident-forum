@@ -1,6 +1,6 @@
 # The Reigate Community Issues and Incidents Forum
 
-![Front page](documentation/README_images/front-page.jpg)
+![Front page](documentation/README_images/front-page.png)
 
 Live version: [Reigate Community Issues and Incidents Forum](https://)
 
@@ -131,27 +131,34 @@ The colour scheme for the site has been chosen to convey a degree of seriousness
 concerned with issues and incidents affecting the lives of residents and visitors in Reigate.
 
 The colours used are:
+#### Home page
 * Header and footer: Black (#212529) with Grey font (#aeaea7)
-
 * Background: Light grey (#f9fafc) with black font (#212529)
-
 * Floating heading container (hex #445261, with 0.9 opaqueness)
+![Front Page palette](documentation/README_images/front-page-palette.png)
 
+#### Report List page
 * Author banner in report list: Green (#188181) with white font (#ffffff)
-
 * Font for individual report titles: Red (#e84610)
-
+![Report List palette](documentation/README_images/report-list-palette.png)
 
 ### Typography
+The font type used for the site is Lato, which is clearly defined and carries an appropriate degree of gravity and
+urgency for the site.
+![Lato font example](documentation/README_images/lato-font-outline.png)
 
 ### Imagery
+The main image and placeholder for the site shows the junction between Bell Street and High Street in Reigate, with the
+old Town Hall tower in the background. The photo was taken by Joanne Lovbakke.
+![Main image](documentation/README_images/rcii-main-image.jpg)
 
-
-
+Additional images are submitted by users (relevant to the issue or incident) or provided by the relevant local
+authority, and uploaded by admin to the Cloudinary storage facility for static files.
 
 ## Features
 
 ### Home page
+
 
 ### Report List page
 
