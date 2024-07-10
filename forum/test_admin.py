@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.utils import timezone
 from django.contrib.auth.models import User
 from django.contrib.admin.sites import AdminSite
 from django.urls import reverse
@@ -10,8 +11,9 @@ class AdminTestCase(TestCase):
         # Create test data
         self.user = User.objects.create_superuser(username='admin', email='admin@example.com', password='adminpassword')
         self.client.force_login(self.user)  # Log in admin user
-        self.issue = Issue.objects.create(issue_title='Test Issue', issue_content='Test content', user=self.user)
+        self.issue = Issue.objects.create(issue_title='Test Issue', issue_content='Test content', user=self.user, date_of_issue=timezone.now())
         self.comment = Comment.objects.create(comment_issue=self.issue, comment_author=self.user, comment_content='Test comment')
+        # print(f"Comment Content: {self.comment.comment_content}")  # Add this line to verify comment content
 
     def test_issue_admin_page(self):
         # Test issue list page
@@ -28,11 +30,13 @@ class AdminTestCase(TestCase):
         # Test comment list page
         response = self.client.get(reverse('admin:forum_comment_changelist'))
         self.assertEqual(response.status_code, 200)
+        # print(response.content.decode())  # Print response content for debugging
         self.assertContains(response, 'Test comment')  # Check if test comment is displayed
 
         # Test comment detail page
         response = self.client.get(reverse('admin:forum_comment_change', args=[self.comment.id]))
         self.assertEqual(response.status_code, 200)
+        # print(response.content.decode())  # Print response content for debugging
         self.assertContains(response, 'Test comment')  # Check if test comment details are displayed
 
     def test_custom_admin_methods(self):

@@ -1,13 +1,15 @@
 from django.test import TestCase
+from django.utils import timezone
 from django.contrib.auth.models import User
+from django import forms
 from .forms import CommentForm, AdminCommentForm
 from .models import Issue, Comment
 
 class FormsTestCase(TestCase):
     def setUp(self):
         # Create test data
-        self.issue = Issue.objects.create(issue_title='Test Issue')
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_superuser(username='admin', email='admin@example.com', password='adminpassword')
+        self.issue = Issue.objects.create(issue_title='Test Issue', date_of_issue=timezone.now(), user=self.user)
 
     def test_comment_form_initialization(self):
         # Test initialization without issue parameter

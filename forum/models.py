@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -76,7 +77,7 @@ class Issue(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     date_of_issue = models.DateTimeField()
     issue_title = models.CharField(max_length=80, blank=False)
-    slug = models.SlugField(max_length=200, default='')
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     issue_content = models.TextField(max_length=1500)
     issue_location = models.CharField(max_length=100, blank=False)
     is_urgent = models.CharField(max_length=13, choices=URGENT_CHOICES)
@@ -89,6 +90,10 @@ class Issue(models.Model):
     def __str__(self):
         return str(self.issue_title) if self.issue_title else "No title"
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.issue_title)
+        super().save(*args, **kwargs)
 
 class Comment(models.Model):
     comment_issue = models.ForeignKey(
