@@ -42,11 +42,13 @@ ALLOWED_HOSTS = ['8000-jl14-communityinciden-mdkyok2sobs.ws-eu107.gitpod.io',
 '8000-jl14-communityinciden-rtz5trbpxri.ws-eu108.gitpod.io',
  '8000-jl14-communityinciden-32dcrhqwhbp.ws-eu108.gitpod.io',
 '*.gitpod.io',
+'8000-jl14-communityinciden-tai0wvjcksb.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',
     'https://*.herokuapp.com',
+    'https://*.codeinstitute-ide.net',
 ]
 
 # Application definition

@@ -8,12 +8,12 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("<slug:slug>/", views.report_detail, name="report-detail"),
     path(
-        '<slug:slug>/comment_edit/<int:comment_id>', 
+        '<slug:slug>/edit_comment/<int:comment_id>', 
         views.comment_edit, 
         name='comment_edit'
     ),
     path(
-        '<slug:slug>/comment_delete/<int:comment_id>',
+        '<slug:slug>/delete_comment/<int:comment_id>',
         views.comment_delete, 
         name='comment_delete'
     ),
