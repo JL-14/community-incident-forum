@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.urls import reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -50,6 +51,17 @@ def report_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+
+def get_navbar_urls(request):
+    return {
+        'home_url': reverse('home'),
+        'reportlist_url': reverse('reportlist'),
+        'contact_url': reverse('contact'),
+        'logout_url': reverse('account_logout'),
+        'signup_url': reverse('account_signup'),
+        'login_url': reverse('account_login'),
+    }
 
 
 def comment_edit(request, slug, comment_id):

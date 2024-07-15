@@ -32,7 +32,7 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Reigate Community Issues and Incidents</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -42,32 +42,32 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link text-warning {% if request.path == home_url %}active{% endif %}" aria-current="Home page"
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == reportlist_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link text-warning {% if request.path == '/reportlist/' %}active{% endif %}" aria-current="Report List page"
                             href="{% url 'reportlist' %}">Report List</a>
                     </li>
                     <li class="contact">
-                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="nav-link text-warning {% if request.path == '/contact/' %}active{% endif %}" aria-current="Contact Us page" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link text-warning {% if request.path == logout_url %}active{% endif %}" aria-current="Log Out" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link text-warning {% if request.path == signup_url %}active{% endif %}" aria-current="Register"
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link text-warning {% if request.path == login_url %}active{% endif %}" aria-current="Log In" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
                 <span class="navbar-text">
-                    a community forum for issues and incidents in Reigate
+                    <em>a community forum for issues and incidents in Reigate</em>
                 </span>
             </div>
         </div>
@@ -90,9 +90,9 @@
 
     <main class="flex-shrink-0 main-bg mt-5 pt-5">
         {% if user.is_authenticated %}
-        <p class="text-end mt-1">You are logged in as {{ user }}</p>
+        <p class="text-center mt-1 alert-success col-1 offset-10"><strong>You are logged in as {{ user }}</strong></p>
         {% else %}
-        <p class="text-end mt-1">You are not logged in</p>
+        <p class="text-center mt-1 alert-danger col-1 offset-10"><strong>You are not logged in</strong></p>
         {% endif %}
 
         {% block content %}

@@ -6,7 +6,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #aeaea7;
+    color: #F9FAFC;
 }
 
 .thin {
@@ -23,6 +23,14 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+}
+
+.nav-link {
+    color: #ffc107;
+}
+
+.active {
+    font-weight: bold;
 }
 
 .card {
@@ -176,6 +184,10 @@ body {
     text-decoration: underline;
 }
 
+.nav-link:hover {
+    text-decoration: underline;
+}
+
 .btn-like {
     color: #E84610;
     border: none;
@@ -211,6 +223,10 @@ body {
     top: 0;
     width: 100%;
     z-index: 1030;
+}
+
+.navbar-text {
+    color: #F9FAFC;
 }
 
 .notification-container {
