@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.urls import reverse
 from django.views import generic
 from django.contrib import messages
@@ -21,11 +21,21 @@ class IssueList(generic.ListView):
     paginate_by = 6
 
 
+def get_navbar_urls(request):
+    return {
+        'home_url': reverse('home'),
+        'reportlist_url': reverse('reportlist'),
+        'contact_url': reverse('contact'),
+        'logout_url': reverse('account_logout'),
+        'signup_url': reverse('account_signup'),
+        'login_url': reverse('account_login'),
+    }
+
+
 def report_detail(request, slug):
     report = get_object_or_404(Issue, slug=slug)
     comments = report.comments.all().order_by("-created_on")
     comment_count = report.comments.filter(approved=True).count()
-    comment_form = CommentForm()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST, issue=report)
@@ -35,7 +45,7 @@ def report_detail(request, slug):
             comment.comment_issue = report
             comment.save()
             messages.success(request, 'Comment submitted and awaiting approval.')
-            comment_form = CommentForm(issue=report)
+            return redirect('add_comment', slug=slug)  # Redirect to add_comment view after successful submission
         else:
             messages.error(request, 'Error submitting comment, please try again.')
     else:
@@ -52,16 +62,31 @@ def report_detail(request, slug):
         },
     )
 
+def add_comment(request, slug):
+    report = get_object_or_404(Issue, slug=slug)
 
-def get_navbar_urls(request):
-    return {
-        'home_url': reverse('home'),
-        'reportlist_url': reverse('reportlist'),
-        'contact_url': reverse('contact'),
-        'logout_url': reverse('account_logout'),
-        'signup_url': reverse('account_signup'),
-        'login_url': reverse('account_login'),
-    }
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST, issue=report)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.comment_author = request.user
+            comment.comment_issue = report
+            comment.save()
+            messages.success(request, 'Comment submitted and awaiting approval.')
+            return redirect('report-detail', slug=slug)  # Redirect to self after successful submission
+        else:
+            messages.error(request, 'Error submitting comment, please try again.')
+    else:
+        comment_form = CommentForm(issue=report)
+
+    return render(
+        request,
+        "forum/add_comment.html",
+        {
+            "comment_form": comment_form,
+            "slug": slug,
+        }
+    )
 
 
 def comment_edit(request, slug, comment_id):

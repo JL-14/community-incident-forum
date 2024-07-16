@@ -7,6 +7,7 @@ urlpatterns = [
     path("reportlist/", views.IssueList.as_view(), name="reportlist"),
     path("contact/", views.contact, name="contact"),
     path("<slug:slug>/", views.report_detail, name="report-detail"),
+    path("<slug:slug>/add_comment/", views.add_comment, name="add_comment"),
     path(
         '<slug:slug>/edit_comment/<int:comment_id>', 
         views.comment_edit, 

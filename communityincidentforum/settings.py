@@ -42,7 +42,7 @@ ALLOWED_HOSTS = ['8000-jl14-communityinciden-mdkyok2sobs.ws-eu107.gitpod.io',
 '8000-jl14-communityinciden-rtz5trbpxri.ws-eu108.gitpod.io',
  '8000-jl14-communityinciden-32dcrhqwhbp.ws-eu108.gitpod.io',
 '*.gitpod.io',
-'8000-jl14-communityinciden-jgbfrl0ykd3.ws.codeinstitute-ide.net',
+'8000-jl14-communityinciden-vlxetx3t9kz.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [

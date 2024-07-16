@@ -48,8 +48,12 @@
   </div>
   <!-- Displaying Comments -->
   <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <h3>Comments:</h3>
+    <div class="col-md-6 card mb-4 mt-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>Comments:</h3>
+        <!-- New Comments button -->
+        <a href="{% url 'add_comment' slug=issue.slug %}" class="btn btn-edit">Add a Comment</a>
+      </div>
       <div class="card-body">
         {% for comment in comments %}
         <div class="p-2 comments
@@ -59,7 +63,7 @@
             On
             {{ comment.created_on }}
             <span style="color:blue">
-            {{ comment.comment_author }}
+              {{ comment.comment_author }}
             </span>
             wrote:
           </p>
@@ -72,7 +76,7 @@
           </p>
           {% endif %}
           {% if user.is_authenticated and comment.comment_author == user %}
-          <button class="btn btn-delete"comment_id="{{ comment.id }}">
+          <button class="btn btn-delete" comment_id="{{ comment.id }}">
             Delete
           </button>
           <button class="btn btn-edit" comment_id="{{ comment.id }}">
@@ -82,25 +86,6 @@
         </div>
         {% endfor %}
       </div>
-    </div>
-    <!-- New Comments -->
-    <div class="col-md-4 card mb-4 mt-3">
-        <div class="card-body">
-            {% if user.is_authenticated %}
-            <h3>Leave a comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
-            <form id="commentForm" method="post"
-            style="margin-top: 1.3em;">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button id="submitButton" type="submit"
-                class="btn btn-signup btn-lg">Submit</button>
-            </form>
-
-            {% else %}
-            <p>Log in to leave a comment</p>
-            {% endif %}
-        </div>
     </div>
   </div>
 </div>
@@ -122,7 +107,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
           data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
+        <a id="deleteConfirm" href="{% url 'report-detail' issue.slug %}" class="btn
           btn-danger">Delete</a>
       </div>
     </div>
