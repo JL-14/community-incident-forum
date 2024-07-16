@@ -36,20 +36,9 @@ def report_detail(request, slug):
     report = get_object_or_404(Issue, slug=slug)
     comments = report.comments.all().order_by("-created_on")
     comment_count = report.comments.filter(approved=True).count()
+    comment_form = CommentForm()
 
-    if request.method == "POST":
-        comment_form = CommentForm(data=request.POST, issue=report)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.comment_author = request.user
-            comment.comment_issue = report
-            comment.save()
-            messages.success(request, 'Comment submitted and awaiting approval.')
-            return redirect('add_comment', slug=slug)  # Redirect to add_comment view after successful submission
-        else:
-            messages.error(request, 'Error submitting comment, please try again.')
-    else:
-        comment_form = CommentForm(issue=report)
+    issue_title = report.issue_title
 
     return render(
         request,
@@ -59,6 +48,7 @@ def report_detail(request, slug):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
+            "issue_title": report.issue_title,
         },
     )
 
@@ -79,12 +69,15 @@ def add_comment(request, slug):
     else:
         comment_form = CommentForm(issue=report)
 
+    issue_title = report.issue_title
+
     return render(
         request,
         "forum/add_comment.html",
         {
             "comment_form": comment_form,
             "slug": slug,
+            "issue_title": report.issue_title,
         }
     )
 

@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>Add a Comment</h2>
+    <h2>Add a Comment on {{ issue_title }}</h2>
     <div class="col-md-6">
         <form id="commentForm" method="post">
             {% csrf_token %}
