@@ -39,6 +39,7 @@ def report_detail(request, slug):
     comment_form = CommentForm()
 
     issue_title = report.issue_title
+    issue_content = report.issue_content
 
     return render(
         request,
@@ -49,6 +50,7 @@ def report_detail(request, slug):
             "comment_count": comment_count,
             "comment_form": comment_form,
             "issue_title": report.issue_title,
+            "issue_content": report.issue_content
         },
     )
 
@@ -70,6 +72,7 @@ def add_comment(request, slug):
         comment_form = CommentForm(issue=report)
 
     issue_title = report.issue_title
+    issue_content = report.issue_content
 
     return render(
         request,
@@ -78,6 +81,7 @@ def add_comment(request, slug):
             "comment_form": comment_form,
             "slug": slug,
             "issue_title": report.issue_title,
+            "issue_content": report.issue_content
         }
     )
 
