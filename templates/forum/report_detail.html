@@ -79,9 +79,9 @@
           <button class="btn btn-delete" comment_id="{{ comment.id }}">
             Delete
           </button>
-          <button class="btn btn-edit" comment_id="{{ comment.id }}">
+          <a href="{% url 'comment_edit' slug=issue.slug comment_id=comment.id %}" class="btn btn-edit">
             Edit
-          </button>
+          </a>
           {% endif %}
         </div>
         {% endfor %}

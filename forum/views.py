@@ -87,22 +87,39 @@ def add_comment(request, slug):
 
 
 def comment_edit(request, slug, comment_id):
-    """To edit comments"""
+    # Fetch the issue based on the slug
+    report = get_object_or_404(Issue, slug=slug)
+
+    # Fetch the comment to edit based on comment_id
+    comment = get_object_or_404(Comment, pk=comment_id)
+
     if request.method == "POST":
-        queryset = Issue.objects.all()
-        report = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
         if comment_form.is_valid() and comment.comment_author == request.user:
             comment = comment_form.save(commit=False)
             comment.report = report
-            comment.approved = False
+            comment.approved = False  # To mark the comment as not approved after edit
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.success(request, 'Comment Updated!')
+            return HttpResponseRedirect(reverse('report-detail', kwargs={'slug': slug}))  # Redirect to report_detail page after successful update
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment')
+            messages.error(request, 'Error updating comment')
+    else:
+        # Prepopulate form with existing comment data
+        comment_form = CommentForm(instance=comment)
 
-    return HttpResponseRedirect(reverse('report-detail', args=[slug]))
+    # Pass necessary context to the template
+    return render(
+        request,
+        "forum/add_comment.html",
+        {
+            "comment_form": comment_form,
+            "slug": slug,
+            "issue_title": report.issue_title,  # Assuming you need issue_title in add_comment template
+            "issue_content": report.issue_content,  # Assuming you need issue_content in add_comment template
+            "edit_mode": True,  # Flag to indicate edit mode in the template
+        }
+    )
 
 
 def comment_delete(request, slug, comment_id):
@@ -120,3 +137,12 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('report-detail', args=[slug]))
+
+"""To handle errors"""
+def handler404(request, exception):
+    """ Error Handler 404 - Page Not Found """
+    return render(request, "errors/404.html", status=404)
+
+def handler500(request):
+    """ Error Handler 500 - Internal Server Error """
+    return render(request, "errors/500.html", status=500)

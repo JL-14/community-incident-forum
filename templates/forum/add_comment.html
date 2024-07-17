@@ -2,14 +2,14 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5 bg-warning">
-    <h2>Add a Comment or Update on "{{ issue_title }}"</h2>
+<div class="container mt-5 bg-light">
+    <h2>{% if comment_form.instance.pk %}Update Comment{% else %}Add a Comment{% endif %} on "{{ issue_title }}"</h2>
     <p>Issue details: <br><em>{{ issue_content | safe }}</em></p>
     <div class="col-md-6">
         <form id="commentForm" method="post">
             {% csrf_token %}
             {{ comment_form | crispy }}
-            <button type="submit" class="btn btn-primary mt-3 mb-2">Submit</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-2">{% if comment_form.instance.pk %}Update{% else %}Submit{% endif %}</button>
         </form>
     </div>
 </div>
