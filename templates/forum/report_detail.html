@@ -76,9 +76,11 @@
           </p>
           {% endif %}
           {% if user.is_authenticated and comment.comment_author == user %}
+          <!-- Delete comment button -->
           <button class="btn btn-delete" comment_id="{{ comment.id }}">
             Delete
           </button>
+          <!-- Edit comment button -->
           <a href="{% url 'comment_edit' slug=issue.slug comment_id=comment.id %}" class="btn btn-edit">
             Edit
           </a>

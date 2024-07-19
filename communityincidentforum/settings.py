@@ -34,15 +34,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jl14-communityinciden-mdkyok2sobs.ws-eu107.gitpod.io',
+ALLOWED_HOSTS = [
 '127.0.0.1',
 'community-incident-forum-75e7791f6b68.herokuapp.com', 
 'localhost',
-'8000-jl14-communityinciden-hx10yg5oxjv.ws-eu108.gitpod.io',
-'8000-jl14-communityinciden-rtz5trbpxri.ws-eu108.gitpod.io',
- '8000-jl14-communityinciden-32dcrhqwhbp.ws-eu108.gitpod.io',
 '*.gitpod.io',
-'8000-jl14-communityinciden-vlxetx3t9kz.ws.codeinstitute-ide.net',
+'8000-jl14-communityinciden-pe4lymnkzv8.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [

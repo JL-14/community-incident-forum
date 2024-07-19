@@ -1,5 +1,4 @@
-from django.db import models
-from django.contrib.auth.models import User
+""" Admin module """
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import UserAccount, DeptNotified, Issue, Comment
@@ -8,6 +7,7 @@ from .forms import AdminCommentForm
 
 @admin.register(Issue)
 class IssueDetails(SummernoteModelAdmin):
+    """ Admin view for Issue """
     list_display = (
         'issue_title', 'approved', 'date_of_issue', 
         'issue_location', 'user', 'created_on',
@@ -23,6 +23,7 @@ admin.site.register(DeptNotified)
 
 
 class CommentAdmin(admin.ModelAdmin):
+    """ Admin view for Comment """
     form = AdminCommentForm
     list_display = (
         'approved', 'comment_author', 
@@ -30,8 +31,8 @@ class CommentAdmin(admin.ModelAdmin):
     )
     list_filter = ('approved', 'created_on')
     search_fields = ('comment_content', 'comment_author__username')
-
     def comment_issue_title(self, obj):
+        """ Function to display issue title for the comment rather than issue number"""
         return obj.comment_issue.issue_title
 
     comment_issue_title.short_description = 'Issue Title'

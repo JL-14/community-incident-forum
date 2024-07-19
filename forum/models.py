@@ -1,3 +1,4 @@
+""" Python models for app """
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
@@ -96,6 +97,7 @@ class Issue(models.Model):
         super().save(*args, **kwargs)
 
 class Comment(models.Model):
+    """ Fields for Comment module """
     comment_issue = models.ForeignKey(
         Issue, on_delete=models.CASCADE, related_name="comments", null=False, blank=False
     )
@@ -107,14 +109,8 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """ Meta settings for comment view """
         ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment {self.comment_content} by {self.comment_author}"
-
-
-class ContactUs(models.Model):
-    """Fields for Contacting the developer"""
-    enquirer_email = models.EmailField(verbose_name='Enquirer email address')
-    enquirer_phone = models.CharField(max_length=12, blank=True)
-    query = models.TextField(max_length=500)
