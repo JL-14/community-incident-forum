@@ -73,7 +73,7 @@ body {
     position: relative;
     width: 100%;
     height: 50vh;
-    background-image: url('/static/images/rcii-main-image.jpg');
+    background-image: url('https://res.cloudinary.com/dkznuv2fr/image/upload/v1709923534/static/images/rcii-main-image.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
