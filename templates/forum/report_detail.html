@@ -10,14 +10,19 @@
             <!-- Report details -title, author and date -->
             <div class="col-md-6 masthead-reportdetails">
                 <h1 class="post-title">{{ issue.issue_title }}</h1>
-                <p class="post-subtitle">Author: {{ issue.user }} | Date of issue or incident: {{ issue.date_of_issue }}</p>
+                <p class="post-subtitle">
+                  Author: {{ issue.user }} | Date of issue or incident:
+                  {{ issue.date_of_issue }}
+                </p>
             </div>
             <!-- Report details -uploaded image or placeholder -->
             <div class="d-none d-md-block col-md-6 masthead-image">
               {% if "placeholder" in issue.featured_image.url %}             
-              <img src="{% static 'images/rcii-main-image.jpg' %}" class="scale" alt="placeholder">
+              <img src="{% static 'images/rcii-main-image.jpg' %}" 
+              class="scale" alt="placeholder">
               {% else %}
-              <img src="{{ issue.featured_image.url }}" class="scale" alt="{{ issue.issue_title }}">
+              <img src="{{ issue.featured_image.url }}" 
+              class="scale" alt="{{ issue.issue_title }}">
               {% endif %}
             </div>
         </div>
@@ -50,9 +55,15 @@
   <div class="row">
     <div class="col-md-6 card mb-4 mt-3">
       <div class="d-flex justify-content-between align-items-center">
-        <h3>Comments:</h3>
+        <h3>
+          Comments:
+        </h3>
         <!-- New Comments button -->
-        <a href="{% url 'add_comment' slug=issue.slug %}?issue_title={{ issue_title }}" class="btn btn-edit">Add a Comment</a>
+        <a href=
+        "{% url 'add_comment' slug=issue.slug %}?issue_title={{ issue_title }}"
+        class="btn btn-edit">
+          Add a Comment
+        </a>
       </div>
       <div class="card-body">
         {% for comment in comments %}
@@ -81,7 +92,9 @@
             Delete
           </button>
           <!-- Edit comment button -->
-          <a href="{% url 'comment_edit' slug=issue.slug comment_id=comment.id %}" class="btn btn-edit">
+          <a href=
+          "{% url 'comment_edit' slug=issue.slug comment_id=comment.id %}"
+          class="btn btn-edit">
             Edit
           </a>
           {% endif %}
@@ -109,8 +122,11 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
           data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="{% url 'report-detail' issue.slug %}" class="btn
-          btn-danger">Delete</a>
+        <a id="deleteConfirm" 
+        href="{% url 'report-detail' issue.slug %}" 
+        class="btn btn-danger">
+          Delete
+        </a>
       </div>
     </div>
   </div>

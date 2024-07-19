@@ -1,4 +1,5 @@
 """ Python models for app """
+
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
@@ -12,6 +13,7 @@ PAVEMENTS = 'Pavements'
 PUBLIC_SPACES_MAINTENANCE = 'Public spaces maintenance'
 RUBBISH = 'Rubbish'
 FLY_TIPPING = 'Fly-tipping'
+
 ISSUE_TYPE_CHOICES = (
     (ASB, 'Anti-social behaviour'),
     (ROADS, 'Road issues'),
@@ -25,6 +27,7 @@ ISSUE_TYPE_CHOICES = (
 RBC = 'Reigate and Banstead Council'
 SCC = 'Surrey County Council'
 SP = 'Surrey Police'
+
 DEPARTMENT_CHOICES = (
     (RBC, 'Reigate and Banstead Council'),
     (SCC, 'Surrey County Council'),
@@ -34,6 +37,7 @@ DEPARTMENT_CHOICES = (
 APPROVED = 'Approved'
 REJECTED = 'Rejected'
 PENDING = 'Pending'
+
 APPROVED_CHOICES = (
     (APPROVED, 'Approved'),
     (REJECTED, 'Rejected'),
@@ -42,6 +46,7 @@ APPROVED_CHOICES = (
 
 RESOLVED = 'Resolved'
 UNRESOLVED = 'Unresolved'
+
 STATUS_CHOICES = (
     (RESOLVED, 'Resolved'),
     (UNRESOLVED, 'Not resolved'),
@@ -49,6 +54,7 @@ STATUS_CHOICES = (
 
 IS_URGENT = 'Is urgent'
 IS_NOT_URGENT = 'Is not urgent'
+
 URGENT_CHOICES = (
     (IS_URGENT, 'Needs urgent attention, potential danger'),
     (IS_NOT_URGENT, 'Not an urgent or high risk issue'),
@@ -63,10 +69,12 @@ class UserAccount(models.Model):
 
 class DeptNotified(models.Model):
     """Fields for the Department Responsible for the reported issue"""
-    dept_notified = models.CharField(max_length=50, choices=DEPARTMENT_CHOICES)
+    dept_notified = models.CharField(
+        max_length=50, choices=DEPARTMENT_CHOICES
+    )
 
     def __str__(self):
-        return str(self.dept_notified) if self.dept_notified else "No Dept Notified"
+        return str(self.dept_notified) if self.dept_notified else "None"
 
 
 class Issue(models.Model):
@@ -99,7 +107,7 @@ class Issue(models.Model):
 class Comment(models.Model):
     """ Fields for Comment module """
     comment_issue = models.ForeignKey(
-        Issue, on_delete=models.CASCADE, related_name="comments", null=False, blank=False
+        Issue, on_delete=models.CASCADE, related_name="comments"
     )
     comment_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter"
