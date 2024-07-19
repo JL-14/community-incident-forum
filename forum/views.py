@@ -104,7 +104,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.comment_author == request.user:
             comment = comment_form.save(commit=False)
             comment.report = report
-            comment.approved = False  # Mark the comment as not approved
+            comment.approved = False
             comment.save()
             messages.success(request, 'Comment updated!')
             return HttpResponseRedirect(
