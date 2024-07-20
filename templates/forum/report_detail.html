@@ -59,11 +59,13 @@
           Comments:
         </h3>
         <!-- New Comments button -->
+        {% if user.is_authenticated %}
         <a href=
         "{% url 'add_comment' slug=issue.slug %}?issue_title={{ issue_title }}"
         class="btn btn-edit">
           Add a Comment
         </a>
+        {% endif %}
       </div>
       <div class="card-body">
         {% for comment in comments %}
