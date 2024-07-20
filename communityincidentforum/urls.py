@@ -10,7 +10,6 @@ urlpatterns = [
     path("", include("forum.urls"), name="forum-urls"),
 ]
 
-
 # Error handlers
 handler404 = 'communityincidentforum.views.handler404'
 handler500 = 'communityincidentforum.views.handler500'
