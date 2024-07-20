@@ -17,6 +17,3 @@ urlpatterns = [
         name='comment_delete'),
 ]
 
-# Error handlers
-handler404 = 'forum.views.handler404'
-handler500 = 'forum.views.handler500'

@@ -139,14 +139,3 @@ def comment_delete(request, slug, comment_id):
         messages.error(request, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('report-detail', args=[slug]))
-
-
-# Custom error handlers
-def handler404(request, exception):
-    """ Error Handler 404 - Page Not Found """
-    return render(request, "errors/404.html", status=404)
-
-
-def handler500(request):
-    """ Error Handler 500 - Internal Server Error """
-    return render(request, "errors/500.html", status=500)
