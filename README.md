@@ -1,6 +1,6 @@
 # The Reigate Community Issues and Incidents Forum
 
-![Front page](documentation/README_images/front-page.png)
+![Front page](documentation/images/front-page.png)
 
 Live version: [Reigate Community Issues and Incidents Forum](https://)
 
@@ -85,6 +85,8 @@ whether to further promote the site
 * be alerted to new submissions through a dedicated e-mail for new reports, so that I can act swiftly when receiving
 new content
 
+## Future Development
+
 ## Technologies used
 
 ### Languages
@@ -123,6 +125,28 @@ new content
 #### Entity Relationship Diagram (ERD)
 * Lucidchart for the creation of the ERD
 
+## Features
+The following is a description of the features and functionality of the site. Please see the [testing](Testing) section for details of all aspects of functionality.
+
+### Navbar
+The navbar is fixed in place, and appears on all pages. It features the site logo ('Reigate Community Issues and Incidents') in the top left corner (which also serves as a link to the Home page), and navigation links next to the logo. The navigation links are a dark orange to set them apart from the logo and tagline, and will take the user to the Home page, the Report List page, and the Contact Us page. On first arriving at the site, there is an option to Register as a new user of the site, which opens a registration form which creates a new account. There is also an option to Log In (for existing users), which opens the login page where username and password allows the user to log in. There is a red box to the right of the screen which informs visitors that 'You are not logged in', which changes to a green box to inform users that 'You are logged in as (username)' once logged in. These boxes stay visible throughout the site. Finally, on the right hand side of the screen, there is a tagline which reads 'a community forum for issues and incidents in Reigate'.
+
+![Navbar image](documentation/images/navbar-image.png)
+
+### Footer
+The Footer is at the bottom of the screen, and is reached by scrolling down. At the centre of the Footer there is a copyright message ('Copyright Jorgen Lovbakke 2024') and an option to 'Follow us' with icons linking to Facebook, Twitter/ X, Instagram, and YouTube.
+
+### Home page
+The Home page introduces the site, including the rationale and instructions on how to use the site and contact the developer. There is a section with highlighted text (bold in red) emphasising to visitors that the site is not linked to the emergency services or official local government channels, and that in the case of an emergency they should phone 999.
+
+### Report List page
+The Report List page lists the posts on the site, ordered chronologically by the date and time of the issue or incident reported. The posts have an image (relevant to the post if the person reporting it has supplied an image, or a placeholder image -the main image for the site), a banner with the username of the person who reported it, and the title and date of time of the issue that was reported. There are a maximum of 6 reports listed on a page, with Next and Back buttons at the bottom of the page for accessing more reports. The user can click on any report to see the full details of the issue or incident in question.
+
+### Report details page
+On the Report Details page the title, author, and date and time of the issue or incident are set out next to the image supplied by the person making the report (or the placeholder image if no image was provided). The detailed content of the report is then set out below the image and title. Below the contents there is space for comments and/ or updates, which can be provided by registered users who are logged in by clicking the 'Add a Comment' button (which is only visible to logged in users). The comment section has full CRUD functionality (enabling users to Create comments, Read the comments, Update comments, and Delete comments) giving users full control over content they post to the site. To prevent erroneous or misleading information from being posted, comments will appear as shaded until approved by a user with administrative privileges. Feedback boxes appear when comments are submitted (saying that 'The comment is awaiting approval' or 'There was an error submitting, please try again'). Users who have submitted comments have the option of editing or deleting their comments through buttons to 'Delete' and 'Edit' underneath their comments (not for comments submitted by other users). For users who wish to delete their comments or updates, a box asks them to confirm that they want to delete the comment as this action cannot be undone, before a box appears confirming that 'Comment has been successfully deleted'. Users who wish to edit their comment or update are taken back to the Add a Comment form, where the original comment appears (to facilitate editing). On submitting the updated comment, a box appears to confirm that the comment has been updated, although the comment is shaded out and showing as awaiting approval so that the moderator can approve (or not) the updated comment. 
+
+### Contact Us page
+The Contact Us page has information on how to contact the forum, whether to to provide information about a new issue or incident, or to provide comments or suggestions. For new content, there is a link to a dedicated e-mail address ('report@reigatecommunityforum.co.uk') and instructions on what content needs to be included for a report to be created. Using an email-based submission process, the forum moderators have access to the submitters e-mail address for questions, queries, or missing information. There is a separate e-mail address for questions or suggestions for the moderators and developer ('info@reigatecommunityforum.co.uk').
 
 ## App design
 
@@ -135,45 +159,69 @@ The colours used are:
 * Header and footer: Black (#212529) with Grey font (#aeaea7)
 * Background: Light grey (#f9fafc) with black font (#212529)
 * Floating heading container (hex #445261, with 0.9 opaqueness)
-![Front Page palette](documentation/README_images/front-page-palette.png)
+![Front Page palette](documentation/images/front-page-palette.png)
 
 #### Report List page
 * Author banner in report list: Green (#188181) with white font (#ffffff)
 * Font for individual report titles: Red (#e84610)
-![Report List palette](documentation/README_images/report-list-palette.png)
+![Report List palette](documentation/images/report-list-palette.png)
 
 ### Typography
 The font type used for the site is Lato, which is clearly defined and carries an appropriate degree of gravity and
 urgency for the site.
-![Lato font example](documentation/README_images/lato-font-outline.png)
+![Lato font example](documentation/images/lato-font-outline.png)
 
 ### Imagery
 The main image and placeholder for the site shows the junction between Bell Street and High Street in Reigate, with the
 old Town Hall tower in the background. The photo was taken by Joanne Lovbakke.
-![Main image](documentation/README_images/rcii-main-image.jpg)
+![Main image](documentation/images/rcii-main-image.jpg)
 
 Additional images are submitted by users (relevant to the issue or incident) or provided by the relevant local
 authority, and uploaded by admin to the Cloudinary storage facility for static files.
 
-## Features
+### Wireframes
 
-### Home page
+![Wireframe 1](/documentation/images/ciif-wireframe-1.png)
+![Wireframe 2](/documentation/images/ciif-wireframe-2.png)
+![Wireframe 3](/documentation/images/ciif-wireframe-3.png)
+![Wireframe 4](/documentation/images/ciif-wireframe-4.png)
+![Wireframe 5](/documentation/images/ciif-wireframe-5.png)
+![Wireframe 6](/documentation/images/ciif-wireframe-6.png)
+![Wireframe 7](/documentation/images/ciif-wireframe-7.png)
+
+## Agile Methodology
+
+### GitHub Project Management
 
 
-### Report List page
-
-### Report details page
-
-### Contact Us page
+## Flowcharts
 
 
+## Information Architecture
+
+### Database
+
+### Entity-Relationship Diagram
+
+### Data Modelling
+
+#### Models
+
+
+## Testing
+
+
+## Deployment
+
+
+## Credits
+
+
+### Content and Images
+
+
+## Acknowledgements
 
 
 
-![Wireframe 1](/assets/images/ciif-wireframe-1.png)
-![Wireframe 2](/assets/images/ciif-wireframe-2.png)
-![Wireframe 3](/assets/images/ciif-wireframe-3.png)
-![Wireframe 4](/assets/images/ciif-wireframe-4.png)
-![Wireframe 5](/assets/images/ciif-wireframe-5.png)
-![Wireframe 6](/assets/images/ciif-wireframe-6.png)
-![Wireframe 7](/assets/images/ciif-wireframe-7.png)
+
