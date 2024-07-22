@@ -390,6 +390,23 @@ Data model for additional information about the user, such as postcode (to provi
 | Admin permissions | Try to access admin panel as a non-admin user | Access is denied | Yes | Yes | - |
 | User registration | Complete user registration process | The new user is created | Yes | Yes | - |
 
+
+### Validator testing
+#### HTML Validation
+
+#### CSS Validation
+The W3C CSS validator found no errors, and provided 8 warnings ('Due to their dynamic nature, CSS variables are currently not statically checked') which refers to the not being able to check variables with dynamic content (content which interacts with other CSS code). The warnings have been manually explored and do not pose any issues.
+
+![CSS Validator Feedback](/documentation/images/validator-css.png)
+
+#### JS Validation
+The JSHint validator was used to validate the JS file, and found no errors (but reported one undefined variable due to the use of the 'new' operator, which "lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function" (quote from [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) ) indicating that it is a user-defined object rather than a JS-defined variable.
+
+![JS Validator Feedback](/documentation/images/validator-js.png)
+
+#### Python Validation
+
+#### Lighthouse Report
 ---
 
 ## Deployment
