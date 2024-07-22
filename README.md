@@ -180,14 +180,14 @@ Additional images are submitted by users (relevant to the issue or incident) or 
 authority, and uploaded by admin to the Cloudinary storage facility for static files.
 
 ### Wireframes
+The wireframes for the site were developed using [Balsamiq](https://balsamiq.com/) software.
 
-![Wireframe 1](/documentation/images/ciif-wireframe-1.png)
-![Wireframe 2](/documentation/images/ciif-wireframe-2.png)
-![Wireframe 3](/documentation/images/ciif-wireframe-3.png)
-![Wireframe 4](/documentation/images/ciif-wireframe-4.png)
-![Wireframe 5](/documentation/images/ciif-wireframe-5.png)
-![Wireframe 6](/documentation/images/ciif-wireframe-6.png)
-![Wireframe 7](/documentation/images/ciif-wireframe-7.png)
+![Wireframe 1](/documentation/images/wireframe1-home.png)
+![Wireframe 2](/documentation/images/wireframe2-reportlist.png)
+![Wireframe 3](/documentation/images/wireframe3-reportdetail.png)
+![Wireframe 4](/documentation/images/wireframe4-addcomment.png)
+![Wireframe 5](/documentation/images/wireframe5-contact.png)
+
 
 ## Agile Methodology
 
@@ -213,6 +213,83 @@ authority, and uploaded by admin to the Cloudinary storage facility for static f
 
 ## Deployment
 
+- The programme was deployed to [Heroku](https://dashboard.heroku.com/apps/community-incident-forum).
+- The programme can be reached by the [link](https://community-incident-forum-75e7791f6b68.herokuapp.com/)
+
+### Deploying the project as an application running locally:
+
+  1. This project requires you to have Python installed on your local PC:
+  [Python](https://www.python.org/downloads/)
+
+  2. You will also need pip installed to allow the installation of modules the application uses.
+  [PIP](https://pypi.org/project/pip/)
+
+  3. Create a local copy of the GitHub repository by following one of the two processes below:
+
+    - Download ZIP file:
+        1. Go to the [GitHub Repo page](https://github.com/JL-14/community-incident-forum).
+        2. Click the Code button and download the ZIP file containing the project.
+        3. Extract the ZIP file to a location on your PC.
+
+    - Clone the repository:
+        1. Open a folder on your computer with the terminal.
+        2. Run the following command
+        - `git clone https://github.com/JL-14/community-incident-forum.git`
+
+    - Alternatively, if using Gitpod, you can use the link below to create your own workspace using this repository.
+
+    [Open in Gitpod](https://jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net/)
+
+  4. Install Python module dependencies:
+     
+    1. Navigate to the folder 'community-incident-forum' by executing the command:
+            - `cd /workspace/community-incident-forum`
+    2. Run the command pip install -r requirements.txt
+            - `pip3 install -r requirements.txt`
+
+### Deploying the project to Heroku to be run as a web application:
+1. Clone the repository:
+    1. Open a folder on your computer with the terminal.
+
+    2. Run the following command
+        - `git clone https://github.com/JL-14/community-incident-forum.git`
+
+2. Create your own GitHub repository to host the code.
+
+    1. Run the command `git remote set-url origin <Your GitHub Repo Path>` to set the remote repository location to your repository.
+
+    2. Push the files to your repository with the following command:
+        - `git push`
+
+3. Create a Heroku account if you don't already have one here [Heroku](https://dashboard.heroku.com).
+
+4. Create a new Heroku application on the following page here [New Heroku App](https://dashboard.heroku.com/apps):
+
+    1. Go to the Deploy tab:
+
+    2. Link your GitHub account and connect the application to the repository you created.
+
+    3. Go to the Settings tab:
+
+    4. Click "Add buildpack":
+
+    5. Add the Python and Node.js buildpacks in the following order:
+
+    6. Click "Reveal Config Vars."
+
+    7. Add 1 new Config Vars:
+        - Key: PORT Value: 8000
+        - *This Config was provided by [CODE INSTITUTE](https://codeinstitute.net/)*.
+
+    8. Go back to the Deploy tab:
+
+    9. Click "Deploy Branch":
+
+        - Wait for the completion of the deployment.
+
+    10. Click "Open app" to launch the application inside a web page.
+
+---
 
 ## Credits
 
