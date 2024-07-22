@@ -353,41 +353,42 @@ Data model for additional information about the user, such as postcode (to provi
 | feature | action | expected result | tested | passed | comments |
 | --- | --- | --- | --- | --- | --- |
 | Navbar | | | | | |
-| Home | Click on the "Home" link | The user is redirected to the main page | Yes | Yes | - |
-| Packages | Click on the "Packages" link | The user is redirected to the Packages page | Yes | Yes | - |
-| Contact | Click on the "Contact" link | The user is redirected to the contact page | Yes | Yes | - |
-| Logo | Click on the logo | User is redirected to Home page | Yes | Yes | - | - |
+| Logo/ Name of site | Click on the the logo/ site-name | The user is directed to the Home page | Yes | Yes | - |
+| Home link | Click on the "Home" link | The user is directed to the Home page | Yes | Yes | - |
+| Report List link | Click on the "Report List" link | The user is directed to the Report List page | Yes | Yes | - |
+| Contact Us link | Click on the "Contact Us" link | User is directed to "Sign In" page | Yes | Yes | - | - |
+| Login link | Click on the "Login" link | User is directed to "Contact Us" page | Yes | Yes | - | - |
+| Register link | Click on the "Register" link | User is directed to user registration page | Yes | Yes | - | - |
+| Logout link | Click on the "Logout" link | User is asked to confirm that they want to sign out| Yes | Yes | - | - |
+| Login status | Log in to account | Display changes from red with text "You are not logged in" to green with text "You are logged in as 'username' | Yes | Yes | - | - |
+| Navbar navigation links | Reduce screen size | The navigation links merge into a collapsed 'menu icon' | Yes | Yes | - |
 | Footer | | | | | |
-| Facebook link in the footer | Click on the Facebook link | The user is redirected to the Facebook page | Yes | Yes | - |
-| Twitter link in the footer | Click on the Twitter link | The user is redirected to the Twitter page | Yes | Yes | - |
-| Instagram link in the footer | Click on the Instagram link | The user is redirected to the Instagram page | Yes | Yes | - |
-| Contact Us link in the footer | Click on the Contact Us link | The user is redirected to the Contact/ Booking page | Yes | Yes | - |
+| Facebook link in the footer | Click on the Facebook link | The user is directed to the Facebook page | Yes | Yes | - |
+| Twitter/X link in the footer | Click on the Twitter/X link | The user is directed to the Twitter/X page | Yes | Yes | - |
+| Instagram link in the footer | Click on the Instagram link | The user is directed to the Instagram page | Yes | Yes | - |
+| YouTube link in the footer | Click on the YouTube link | The user is directed to the Contact/ Booking page | Yes | Yes | - |
 | Home page | | | | | |
-| Seafaring package link on Home Page | Click on the Seafaring package link | The user is redirected to the Seafaring package on the Packages page | Yes | Yes | - |
-| Camp package link on Home Page | Click on the Camp package link | The user is redirected to the Camp package on the Packages page | Yes | Yes | - |
-| Arts and Crafts package link on Home Page | Click on the Arts and Crafts package link | The user is redirected to the Arts and Crafts package on the Packages page | Yes | Yes | - |
-| E-mail link in Location section | Click on the E-mail link | The user is redirected to the an e-mail client | Yes | Yes | - |
-| Packages page | | | | | |
-| "Go to Contact/ Booking" button under Seafaring package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the contact page | Yes | Yes | - |
-| "Return to Home Page" link under Seafaring package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
-| "Return to Top" link under Seafaring package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
- "Go to Contact/ Booking" button under Camp package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the contact page | Yes | Yes | - |
-| "Return to Home Page" link under Camp package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
-| "Return to Top" link under Camp package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
-| "Go to Contact/ Booking" button under Arts and Crafts package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the Contact page | Yes | Yes | - |
-| "Return to Home Page" link under Arts and Crafts package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
-| "Return to Top" link under Arts and Crafts package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
-| Contact/ Booking page | | | | | |
-| Name input | Enter name | Name is entered and box changes colour from red to brown | Yes | Yes | If user does not enter a name, an error message appears on pressing the "Send !!!" button |
-| Email input | Enter email address | Email is entered and box changes colour from red to brown | Yes | Yes | If user does not enter an email address, an error message appears on pressing the "Send !!!" button |
-| Telephone input | Enter telephone number | Telephone number is entered | Yes | Yes | - |
-| Booking section checkboxes | Click on the checkboxes | The box is selected and displays a tick when clicked | Yes | Yes | - |
-| Booking section date selector (dropbox) | Click on the "Available Seafaring Dates" box (or Camp Dates or Arts and Crafts Dates) | A list of available dates drops down and a date can be selected | Yes | Yes | - |
-| Open text query field | Enter text | Text is entered | Yes | Yes | - |
-| Terms and Conditions link | Click on link | Terms and Conditions are loaded in a new window | Yes | Yes | - |
-| Preferred contact type radio boxes | Click on preferred radio box | Preferred radio box is marked | Yes | Yes | If user does not select a preferred contact type, an error message appears on pressing the "Send !!!" button |
-| "Send !!!" button | Click on the "Send !!!" button | The user is redirected to the Thank You page | Yes | Yes | If any of the required fields (name, email, preferred contact type) have not been completed, an error message appears |
-| E-mail link in Location section | Click on the E-mail link | The user is redirected to the an e-mail client | Yes | Yes | - |
+| Link to Contact Us page in the text | Click on the "Contact Us" link | The user is directed to the Contact Us page | Yes | Yes | - |
+| Report List page | | | | | |
+| Individual reports | Click on the individual report title | The user is directed to the Report Detail page | Yes | Yes | - |
+| Next and Back buttons at the bottom of the page | Click on the Next and Back buttons | The user is shown the next and previous sets of reports respectively | Yes | Yes | - |
+| Report Detail page | | | | | |
+| Add a Comment button | Click on the Add a Comment button | The user is directed to the "Add comment" page | Yes | Yes | - |
+| Delete Comment button | Click on the Delete Comment button | The user is asked to confirm that they want to Delete Comment | Yes | Yes | - |
+| Delete Comment confirmation button | Click on the Delete Comment confirmation button | The comment is deleted, confirmed by a popup | Yes | Yes | - |
+| Delete Comment cancel button | Click on the Delete Comment cancel button | The user is returned to the Report Detail page | Yes | Yes | - |
+| Edit Comment button | Click on the Edit Comment button | The user is taken to the Update Comment page | Yes | Yes | - |
+| Update Comment button | Click on the Update button | The comment is updated, confirmed by a popup, returns to Report Detail page | Yes | Yes | - |
+| Contact Us page | | | | | |
+| Link to email for new reports in the text | Click on the "report@reigatecommunityforum.co.uk" link | The user is directed to their chosen email platform with new email with populated address field open | Yes | Yes | - |
+| Link to email for comments and suggestions in the text | Click on the "info@reigatecommunityforum.co.uk" link | The user is directed to their chosen email platform with new email with populated address field open | Yes | Yes | - |
+| Admin page | | | | | |
+| Submitted comments | Click on a submitted comment awaiting approval | The admin is directed to the comment details | Yes | Yes | - |
+| Comment awaiting approval | Check box for 'Approved' status | The comment shows as approved in clear text on the Report Detail page | Yes | Yes | - |
+| Add issue button | Click on the "Add issue" button | A New Issue page appears with the expected fields | Yes | Yes | - |
+| Upload image option | Click to choose file | The image appears instead of placeholder image on Report List and Report Detail pages | Yes | No | Image only appears after 'python manage.py collectstatic' is run |
+| Admin permissions | Try to access admin panel as a non-admin user | Access is denied | Yes | Yes | - |
+| User registration | Complete user registration process | The new user is created | Yes | Yes | - |
 
 ---
 
