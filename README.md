@@ -190,23 +190,110 @@ The wireframes for the site were developed using [Balsamiq](https://balsamiq.com
 
 
 ## Agile Methodology
+An Agile methodology was adopted from start to finish for the development of the site. GitHub Project Management was used to manage the project, which facilitated the move from the aspirational initial design to the minimum viable product over the course of the work, moving the User Stories labeled as 'Nice to have' into the column for Future Deployments. 
 
 ### GitHub Project Management
+![](/documentation/images/github-project-board-1.png)
+![](/documentation/images/github-project-board-2.png)
 
+All User Stories were assigned labels of 'Must Have', 'Could Have', or 'Nice to Have'. The final product consists of the 'Must Have' User Stories, with two 'Could Have' User Stories and four additional 'Nice to Have' User Stories which could be accommodated within the project life.
 
-## Flowcharts
+![](/documentation/images/github-project-board-labels.png)
 
 
 ## Information Architecture
 
 ### Database
+The database used for the project is PostgreSQL, hosted by [ElephantSQL](https://www.elephantsql.com/). SQLite was used as backup database, and for automated Django testing purposes.
 
 ### Entity-Relationship Diagram
+[](/documentation/images/ciif-erd.png)
 
 ### Data Modelling
 
-#### Models
+#### Issue Model
+This is the data model for issues and incidents used in the database.
 
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| user | user | ForeignKey | User, on_delete=models.CASCADE |
+| phone | phone | CharField | max_length=12, blank=True |
+| issue_type | issue_type | CharField | max_length=50, choices=ISSUE_TYPE_CHOICES |
+| created_on | created_on | DateTimeField | auto_now_add=True |
+| updated_on | updated_on | DateTimeField | auto_now_add=True |
+| date_of_issue | date_of_issue | DateTimeField | - |
+| issue_title | issue_title | CharField | max_length=80, blank=False |
+| slug | slug | SlugField | max_length=200, unique=True, blank=True |
+| issue_content | issue_content | CharField | max_length=1500 |
+| issue_location | issue_location | CharField | max_length=100, blank=False |
+| is_urgent | is_urgent | CharField | max_length=13, choices=URGENT_CHOICES |
+| featured_image | featured_image | CloudinaryField | 'image', default='placeholder' |
+| dept_notified | dept_notified | ManyToManyField | DeptNotified, blank=True |
+| notes_about_notifications | notes_about_notifications | TextField | max_length=200, blank=True |
+| status | status | CharField | max_length=20, choices=STATUS_CHOICES |
+| approved | approved | CharField | max_length=20, choices=APPROVED_CHOICES |
+
+Choices models:
+ISSUE_TYPE_CHOICES = (
+    (ASB, 'Anti-social behaviour'),
+    (ROADS, 'Road issues'),
+    (TRAFFIC, 'Traffic issues'),
+    (PAVEMENTS, 'Pavement-related issues'),
+    (PUBLIC_SPACES_MAINTENANCE, 'Issues with maintenance of public spaces'),
+    (RUBBISH, 'Rubbish-related issues'),
+    (FLY_TIPPING, 'Fly-tipping'),
+)
+
+URGENT_CHOICES = (
+    (IS_URGENT, 'Needs urgent attention, potential danger'),
+    (IS_NOT_URGENT, 'Not an urgent or high risk issue'),
+)
+
+STATUS_CHOICES = (
+    (RESOLVED, 'Resolved'),
+    (UNRESOLVED, 'Not resolved'),
+)
+
+APPROVED_CHOICES = (
+    (APPROVED, 'Approved'),
+    (REJECTED, 'Rejected'),
+    (PENDING, 'Pending Review'),
+)
+
+#### Comment Model
+
+Data model for users to leave comments or provide updates when logged in. 
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| comment_issue  | comment_issue  | ForeignKey | Issue, on_delete=models.CASCADE, related_name="comments" |
+| comment_author | comment_author | ForeignKey | User, on_delete=models.CASCADE, related_name="commenter" |
+| comment_content | comment_content | TextField | - |
+| created_on | created_on | DateTimeField | auto_now_add=True |
+| approved | approved | BooleanField | default=False |
+
+#### Department Notified Model
+
+Data model for departments the user has notified about the issue or incident. 
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| dept_notified | dept_notified | CharField | max_length=50, choices=DEPARTMENT_CHOICES |
+
+Choices model:
+DEPARTMENT_CHOICES = (
+    (RBC, 'Reigate and Banstead Council'),
+    (SCC, 'Surrey County Council'),
+    (SP, 'Surrey Police'),
+)
+
+#### UserAccount Model
+Data model for additional information about the user, such as postcode (to provide contextual information about the user who is reporting the issue or incident). *This model is not used in the MVP version of the database*
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| user          | user          | OneToOneField | User, on_delete=models.CASCADE |
+| postcode | postcode | CharField    | max_length=8 |
 
 ## Testing
 
