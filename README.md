@@ -26,6 +26,8 @@ lives.
 The Reigate Community Issues and Incidents Forum is designed to be informative, up-to-date, interactive, and
 user-friendly for residents and visitors alike.
 
+---
+
 ## UX Design
 
 ### Strategy
@@ -52,40 +54,55 @@ authorities will be able to see hazards and issues that may not have been report
 
 ### User Stories
 
-#### First-time user
+#### First-time User
 
-As a first-time visitor to the site, I want to:
-* see an informative front page, so that I clearly understand what the site is about
-* easily be able to navigate through the app using intuitive links, so that I can easily find what I am looking for
-* see all the reported issues and incidents in a list, so that I can find any that are relevant to me
-* be able to click on any report listed, so that I can get more detail where available
-* be able to see any images of the issue or incident, to give me a clear sense of what and where it is
-* I want to be able to easily register for the site, so that I can make full use of the comment/ update function
+| Issue ID    | User Story |
+|-------------|-------------|
+| [#1](https://github.com/JL-14/community-incident-forum/issues/1#issue-2002834835) | As a First-time User, I want to see a home screen that clearly explains the purpose of the forum so that I know how to use the site. |
+| [#2](https://github.com/JL-14/community-incident-forum/issues/2#issue-2002837240) | As a First-time User, I want to be able to easily navigate to the relevant page so that I can find what I am looking for. |
+| [#8](https://github.com/JL-14/community-incident-forum/issues/8#issue-2002843301) | As a First-time User, I want to be able to see a list of issues and incidents reported so that I can identify anything of interest or concern. |
+| [#9](https://github.com/JL-14/community-incident-forum/issues/9#issue-2002844370) | As a First-time User, I want to be able to click on a listed event so that I can see more detail. |
+| [#16](https://github.com/JL-14/community-incident-forum/issues/16#issue-2002852069) | As a First-time User, I want to be able to see images of the issue where available so that I can better understand the concern. |
+| [#3](https://github.com/JL-14/community-incident-forum/issues/3#issue-2002838274) | As a First-time User, I want to be able to easily register for use of the site so that I can view, edit, submit and delete reports. |
 
-#### Frequent user
+#### Regular user
 
-As a frequent user of the site, I want to:
-* easily be able to log in, so that I can use comment and update functionality
-* be able to comment and post updates on reports I see on the site, so that I can provide other users with the latest
-information
-* be able to have images uploaded on the site when alerting users to new issues and incidents, so that I can clearly
-show the issue I am referring to
-* be able to edit or delete comments and updates I post, so that I am in control of the content I post on the site
-* be able to easily contact the forum owners and administrators, so that I can submit new reports or let them have any
-comments or suggestions I may have
+| Issue ID    | User Story |
+|-------------|-------------|
+| [#4](https://github.com/JL-14/community-incident-forum/issues/4#issue-2002839201) | As a Regular User, I want to easily log in and log out so that I can access my content and keep it safe. |
+| [#17](https://github.com/JL-14/community-incident-forum/issues/17#issue-2002853181) | As a Regular User, I want to be able to comment on the report so that I can let others know if I have experienced the same issue/ seen the same incident, or explain a particular issue. |
+| [#13](https://github.com/JL-14/community-incident-forum/issues/13#issue-2002848512) | As a Regular User, I want to be able to upload images of the issue or incident where I have them so that I can fully show what the issue is about and its exact location. |
+| [#14](https://github.com/JL-14/community-incident-forum/issues/14#issue-2002849717) | As a Regular User,  I want to be able to edit and delete comments I have created so that I can provide updates or delete where something is not actually of concern. |
+| [#19](https://github.com/JL-14/community-incident-forum/issues/19#issue-2002855868) | As a Regular User,  I want to be able to easily contact the forum owner so that I can notify of new issues or make suggestions about improvements. |
 
 #### Admin user
-As an admin user, I want to:
-* be able to easily manage both the front- and back-end of the site, so that I can make any changes necessary
-* be able to moderate content through having new reports go through me and comments approved by me before posting, so
-that I have overall control over the site
-* be able to monitor usage of the site in terms of visits, so that I can make decisions about
-whether to further promote the site
-* be able to see a list of registered users, so that I can see who is posting and what they are posting
-* be alerted to new submissions through a dedicated e-mail for new reports, so that I can act swiftly when receiving
-new content
+
+| Issue ID    | User Story |
+|-------------|-------------|
+| [#21](https://github.com/JL-14/community-incident-forum/issues/21#issue-2002857892) | As an Admin User, I want to be able to easily manage the operation of the site so that I can keep it up-to-date and operational. |
+| [#23](https://github.com/JL-14/community-incident-forum/issues/23#issue-2002860093) | As an Admin User, I want to be able to access the full list of registered users so that I can monitor the take-up of the site. |
+
+#### For Future Deployments
+A number of User Stories were identified for future deployments, as not necessary for the site to be fully operational, but nonetheless of benefit.
+
+| Issue ID    | User Story |
+|-------------|-------------|
+| [#6](https://github.com/JL-14/community-incident-forum/issues/6#issue-2002841352) | As a user I want to be able to filter the issues and incidents by type and recency so that I can identify issues and incidents of interest or concern. |
+| [#11](https://github.com/JL-14/community-incident-forum/issues/11#issue-2002846522) | As a user I want to be able to easily submit a new report through an on-line form so that I can alert other residents about issues and incidents in the area. |
+| [#12](https://github.com/JL-14/community-incident-forum/issues/12#issue-2002847650) | As a user I want to clearly understand what information goes in what field so that I can provide the necessary detail. |
+| [#18](https://github.com/JL-14/community-incident-forum/issues/18#issue-2002854318) | As a user I want to be able to easily find links to relevant authorities or agencies so that I can make them aware of the issue or incident. |
+| [#22](https://github.com/JL-14/community-incident-forum/issues/22#issue-2002859105) | As a site admin I want to be alerted when a new report is received so that I can promptly review and approve, or request further information where necessary. |
+| [#5](https://github.com/JL-14/community-incident-forum/issues/5#issue-2002840116) | As a user I want to be able to easily see on a map where issues and incidents have occurred so that I can know whether there are particular concerns in my local area. |
+| [#10](https://github.com/JL-14/community-incident-forum/issues/10#issue-2002845369) | As a user I want to be able to filter events by type, time and recency so that I can identify issues and incidents of interest or concern. |
+| [#7](https://github.com/JL-14/community-incident-forum/issues/7#issue-2002842198) | As a user I want to be able to zoom in on the map so that I can see the local environment more clearly. |
+| [#24](https://github.com/JL-14/community-incident-forum/issues/24#issue-2002861100) | As a site admin I want to be able to see the number of visits to the site so that I can monitor its usage. |
+| [#20](https://github.com/JL-14/community-incident-forum/issues/20#issue-2002856998) | As a commissioner of services I want to be able to easily contact the owner of the site so that I can enquire about adopting it in other areas. |
+
+---
 
 ## Future Development
+
+---
 
 ## Technologies used
 ### Languages
@@ -110,17 +127,20 @@ new content
 + [Psycopg2](https://www.psycopg.org/): the database driver used to connect to the database.
 + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
 + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
-+ [Render](https://pypi.org/project/render/): was used to render the README file.
 + [GitHub](https://github.com/): used to host the website's source code.
++ [GitPod](https://www.gitpod.io/): used as the IDE for the final stages of the project.
 + [VSCode](https://code.visualstudio.com/): the IDE used for the early development stages, later replaced by GitPod.
 + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
 + [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
 + [Coolors](https://coolors.co/202a3c-1c2431-181f2a-0b1523-65e2d9-925cef-6b28e0-ffffff-eeeeee) was used to make a color palette for the website.
++ [Balsamiq](https://balsamiq.com/) was used to develop wireframes for the project.
 + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
 + [JShint](https://jshint.com/): was used to validate JS code for the website.
 + [PEP8](https://pep8.org/): was used to validate Python code for the website.
 + [Django-extensions](https://django-extensions.readthedocs.io/en/latest/) was used to create a Entity-Relationship Diagram.
+
+---
 
 ## Features
 The following is a description of the features and functionality of the site. Please see the [testing](Testing) section for details of all aspects of functionality.
@@ -167,6 +187,8 @@ The Contact Us page has information on how to contact the forum, whether to to p
 
 ![Contact Us page](documentation/images/contact-page.png)
 
+---
+
 ## App design
 
 ### Colour scheme
@@ -207,6 +229,7 @@ The wireframes for the site were developed using [Balsamiq](https://balsamiq.com
 ![Wireframe 4](/documentation/images/wireframe4-addcomment.png)
 ![Wireframe 5](/documentation/images/wireframe5-contact.png)
 
+---
 
 ## Agile Methodology
 An Agile methodology was adopted from start to finish for the development of the site. GitHub Project Management was used to manage the project, which facilitated the move from the aspirational initial design to the minimum viable product over the course of the work, moving the User Stories labeled as 'Nice to have' into the column for Future Deployments. 
@@ -219,9 +242,9 @@ All User Stories were assigned labels of 'Must Have', 'Could Have', or 'Nice to 
 
 ![](/documentation/images/github-project-board-labels.png)
 
+---
 
 ## Information Architecture
-
 ### Database
 The database used for the project is PostgreSQL, hosted by [ElephantSQL](https://www.elephantsql.com/). SQLite was used as backup database, and for automated Django testing purposes.
 
@@ -314,6 +337,8 @@ Data model for additional information about the user, such as postcode (to provi
 | user          | user          | OneToOneField | User, on_delete=models.CASCADE |
 | postcode | postcode | CharField    | max_length=8 |
 
+---
+
 ## Testing
 
 ### Manual testing
@@ -356,6 +381,8 @@ Data model for additional information about the user, such as postcode (to provi
 | Preferred contact type radio boxes | Click on preferred radio box | Preferred radio box is marked | Yes | Yes | If user does not select a preferred contact type, an error message appears on pressing the "Send !!!" button |
 | "Send !!!" button | Click on the "Send !!!" button | The user is redirected to the Thank You page | Yes | Yes | If any of the required fields (name, email, preferred contact type) have not been completed, an error message appears |
 | E-mail link in Location section | Click on the E-mail link | The user is redirected to the an e-mail client | Yes | Yes | - |
+
+---
 
 ## Deployment
 
@@ -438,10 +465,14 @@ Data model for additional information about the user, such as postcode (to provi
 ---
 
 ## Credits
-
-
-### Content and Images
-
+- [GitHub](https://github.com/) for providing the repository facilities and project management functionality.
+- [Django](https://www.djangoproject.com/) for the framework.
+- [Font awesome](https://fontawesome.com/): for the free access to icons.
+- [ElephantSQL](https://www.elephantsql.com/): for providing a free database with PostgreSQL as a Service.
+- [fontawesome](https://fontawesome.com/): for providing free icons.
+- [googlefonts](https://fonts.google.com/): for providing free fonts.
+- [Coolors](https://coolors.co/): for providing a free platform to generate your own palette.
+- [Balsamiq](https://balsamiq.com/): for providing wireframe functionality for the project.
 
 ## Acknowledgements
 
