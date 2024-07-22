@@ -215,6 +215,10 @@ body {
     color: #F9FAFC;
 }
 
+.navbar-toggler.collapsed {
+    border-color: #ffc107;
+}
+
 .notification-container {
     top: 70px;
 }

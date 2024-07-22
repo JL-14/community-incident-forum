@@ -9,7 +9,6 @@ Repository: [GitHub repository](https://github.com/JL-14/community-incident-foru
 The app is developed by [Jorgen Lovbakke](https://github.com/JL-14)
 
 ## About the Reigate Community Issues and Incidents Forum
-
 The Reigate Community Issues and Incidents Forum is a platform designed to provide residents and visitors to Reigate
 with up-to-date information about what is happening in their local area. The website pulls together information and
 updates from official sources (such as local authorities, police, schools) about events, incidents, road closures,
@@ -29,9 +28,7 @@ user-friendly for residents and visitors alike.
 ---
 
 ## UX Design
-
 ### Strategy
-
 The site has been developed for use by residents and visitors to Reigate (but is easily adaptable to other towns and
 cities). The main goal of the site is to provide a forum for sharing information about issues and incidents residents
 and visitors have experienced, which alongside information from the authorities, will ensure that users know what is
@@ -43,7 +40,6 @@ provide updates on reports, as well as edit comments and updates. The site is ma
 review and approve content before it is posted on the site.
 
 ### Target audience
-
 The target audience for site can be divided into:
 
 * Residents: The core audience for the site are the residents of Reigate and its immediate surroundings.
@@ -53,7 +49,6 @@ enabling informed decision-making about travel, routes, accommodation, activitie
 authorities will be able to see hazards and issues that may not have been reported to them.
 
 ### User Stories
-
 #### First-time User
 
 | Issue ID    | User Story |
@@ -87,13 +82,13 @@ A number of User Stories were identified for future deployments, as not necessar
 
 | Issue ID    | User Story |
 |-------------|-------------|
-| [#6](https://github.com/JL-14/community-incident-forum/issues/6#issue-2002841352) | As a user I want to be able to filter the issues and incidents by type and recency so that I can identify issues and incidents of interest or concern. |
+| [#6](https://github.com/JL-14/community-incident-forum/issues/6#issue-2002841352) | As a user I want to be able to filter the issues and incidents by type and recency on a map so that I can identify issues and incidents of interest or concern. |
+| [#10](https://github.com/JL-14/community-incident-forum/issues/10#issue-2002845369) | As a user I want to be able to filter the issues and incidents by type and recency in list view so that I can identify issues and incidents of interest or concern. |
 | [#11](https://github.com/JL-14/community-incident-forum/issues/11#issue-2002846522) | As a user I want to be able to easily submit a new report through an on-line form so that I can alert other residents about issues and incidents in the area. |
-| [#12](https://github.com/JL-14/community-incident-forum/issues/12#issue-2002847650) | As a user I want to clearly understand what information goes in what field so that I can provide the necessary detail. |
+| [#12](https://github.com/JL-14/community-incident-forum/issues/12#issue-2002847650) | As a user I want to clearly understand what information goes in what field on the on-line report submission form so that I can provide the necessary detail. |
 | [#18](https://github.com/JL-14/community-incident-forum/issues/18#issue-2002854318) | As a user I want to be able to easily find links to relevant authorities or agencies so that I can make them aware of the issue or incident. |
 | [#22](https://github.com/JL-14/community-incident-forum/issues/22#issue-2002859105) | As a site admin I want to be alerted when a new report is received so that I can promptly review and approve, or request further information where necessary. |
 | [#5](https://github.com/JL-14/community-incident-forum/issues/5#issue-2002840116) | As a user I want to be able to easily see on a map where issues and incidents have occurred so that I can know whether there are particular concerns in my local area. |
-| [#10](https://github.com/JL-14/community-incident-forum/issues/10#issue-2002845369) | As a user I want to be able to filter events by type, time and recency so that I can identify issues and incidents of interest or concern. |
 | [#7](https://github.com/JL-14/community-incident-forum/issues/7#issue-2002842198) | As a user I want to be able to zoom in on the map so that I can see the local environment more clearly. |
 | [#24](https://github.com/JL-14/community-incident-forum/issues/24#issue-2002861100) | As a site admin I want to be able to see the number of visits to the site so that I can monitor its usage. |
 | [#20](https://github.com/JL-14/community-incident-forum/issues/20#issue-2002856998) | As a commissioner of services I want to be able to easily contact the owner of the site so that I can enquire about adopting it in other areas. |
@@ -101,6 +96,23 @@ A number of User Stories were identified for future deployments, as not necessar
 ---
 
 ## Future Development
+There are a number of aspects to the site which holds great potential for further development. These include:
+
++ Form submission of new issues and incidents -Enabling registered, logged in users to submit content to the site through the completion of an on-line form with the relevant database model fields. With full CRUD (Create-Read-Update-Delete) functionality and the same approval mechanism as on the current comment functionality.
+
++ Map view -Displaying reported issues and incidents in map format, with zoom functionality, to illustrate areas where there are issues to be aware of.
+
++ Greater filtering and sorting functionality in Report List view -Enabling users to select the type of issue or incident they are interested in, sorted and filtered by date and time.
+
++ E-mail notification of new content -Alerts for admin users when new content is submitted, and for users that a new issue or incident has been reported.
+
++ Comprehensive list of contacts -Enabling users to easily find details of where to formally report an issue or incident
+
++ Visitor monitoring functionality -Enabling admin users to easily see how many visits (unqiue and returning) there have been to the site to illustrate take-up of the site content. Most web hosting services will provide this.
+
++ Greater commercial presence -Opening up for advertising on the site, sale of the format and functionality to other towns and cities.
+
++ Further refinement of the appearance of the site -Improving responsiveness aspects and the appearance of the site (which is currently a little bit basic).
 
 ---
 
@@ -190,7 +202,6 @@ The Contact Us page has information on how to contact the forum, whether to to p
 ---
 
 ## App design
-
 ### Colour scheme
 The colour scheme for the site has been chosen to convey a degree of seriousness, reflecting that the site is
 concerned with issues and incidents affecting the lives of residents and visitors in Reigate.
@@ -252,7 +263,6 @@ The database used for the project is PostgreSQL, hosted by [ElephantSQL](https:/
 [](/documentation/images/ciif-erd.png)
 
 ### Data Modelling
-
 #### Issue Model
 This is the data model for issues and incidents used in the database.
 
@@ -303,7 +313,6 @@ APPROVED_CHOICES = (
 )
 
 #### Comment Model
-
 Data model for users to leave comments or provide updates when logged in. 
 
 | Name          | Database Key  | Field Type    | Validation |
@@ -315,7 +324,6 @@ Data model for users to leave comments or provide updates when logged in.
 | approved | approved | BooleanField | default=False |
 
 #### Department Notified Model
-
 Data model for departments the user has notified about the issue or incident. 
 
 | Name          | Database Key  | Field Type    | Validation |
@@ -340,7 +348,6 @@ Data model for additional information about the user, such as postcode (to provi
 ---
 
 ## Testing
-
 ### Manual testing
 
 | feature | action | expected result | tested | passed | comments |
@@ -385,7 +392,6 @@ Data model for additional information about the user, such as postcode (to provi
 ---
 
 ## Deployment
-
 - The programme was deployed to [Heroku](https://dashboard.heroku.com/apps/community-incident-forum).
 - The programme can be reached by the [link](https://community-incident-forum-75e7791f6b68.herokuapp.com/)
 
