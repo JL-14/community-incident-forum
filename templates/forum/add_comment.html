@@ -19,7 +19,7 @@
         <form id="commentForm" method="post">
             {% csrf_token %}
             {{ comment_form | crispy }}
-            <button type="submit" class="btn btn-primary mt-3 mb-2">
+            <button type="submit" class="btn btn-primary mt-3 mb-2" aria-label="Submit to post or update comment">
                 {% if comment_form.instance.pk %}
                 Update
                 {% else %}

@@ -31,7 +31,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in issue.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/rcii-main-image.jpg' %}"
-                                    alt="placeholder image">
+                                    alt="placeholder image Reigate High Street">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ issue.featured_image.url }}"
                                     alt="{{ issue.issue_title }}">
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <a href="{% url 'report-detail' issue.slug %}" class="report-link">
-                                <h2 class="card-title">
+                                <h2 class="card-title" aria-label="Click image to see detailed report">
                                     {{ issue.issue_title }}
                                 </h2>
                             </a>
@@ -69,13 +69,15 @@
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo BACK
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
+                    aria-label="Go back to previous set of reports">&laquo BACK
                 </a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
             <li>
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link"
+                    aria-label="Go to next set of reports"> NEXT &raquo;
                 </a>
             </li>
             {% endif %}
