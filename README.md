@@ -88,42 +88,39 @@ new content
 ## Future Development
 
 ## Technologies used
-
 ### Languages
-* HTML for the site content
-* CSS for site design and layout
-* JavaScript for user interaction on the site for automatically (specifically for the edit and delete capabilities)
-* Python as back-end programming language
-* PostgreSQL for relational database management.
++ [Python 3.9.17](https://www.python.org/downloads/release/python-3917/): the primary language used to develop the server-side of the website.
++ [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
++ [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
++ [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
 
 ### Frameworks
-* Bootstrap as front-end CSS framework for modern responsiveness and pre-built components, with
-- Summernote as Bootstrap tool for managing the appearance and functionality of the administrative parts of the site
-* Django as Python framework for the site, with
-- Crispy Forms as Django framework for managing the appearance and functionality of the comment form
++ [Django](https://www.djangoproject.com/): python framework used to create all the logic.
++ [Bootstratp](https://getbootstrap.com/): used as front-end CSS framework for responsiveness and pre-built components
++ [Summernote](https://summernote.org/): used as Bootstrap tool for managing the appearance and functionality of the administrative parts of the site
 
 ### Databases and storage
-* [ElephantSQL](https://www.elephantsql.com/) as Postgres database (please note that ElephantSQL will cease operations in January 2025)
-* Cloudinary for static file storage
-
-### Integrated Development Environment (IDE)
-* VS Code used as main coding environment
-* GitPod used as backup IDE
-
-### Version control and Deployment
-* Git for version control
-* GitHub for the online repository
-* Heroku used for hosting the deployed app
++ [ElephantSQL](https://www.elephantsql.com/) as main Postgres database (please note that ElephantSQL will cease operations in January 2025)
++ [SQLite](https://www.sqlite.org/): was used as a backup databases, including for some Django tests.
 
 ### Other tools
-#### Wireframes
-- Balsamiq for the creation of wireframes for the site
-- 
-#### Agile working tools
-* GitHub Projects used to manage the Agile working approach for the project
-
-#### Entity Relationship Diagram (ERD)
-* Lucidchart for the creation of the ERD
++ [Git](https://git-scm.com/): the version control system used to manage the code.
++ [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
++ [Gunicorn](https://gunicorn.org/): the web server used to run the website.
++ [Psycopg2](https://www.psycopg.org/): the database driver used to connect to the database.
++ [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
++ [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
++ [Render](https://pypi.org/project/render/): was used to render the README file.
++ [GitHub](https://github.com/): used to host the website's source code.
++ [VSCode](https://code.visualstudio.com/): the IDE used for the early development stages, later replaced by GitPod.
++ [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
++ [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
++ [Coolors](https://coolors.co/202a3c-1c2431-181f2a-0b1523-65e2d9-925cef-6b28e0-ffffff-eeeeee) was used to make a color palette for the website.
++ [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
++ [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
++ [JShint](https://jshint.com/): was used to validate JS code for the website.
++ [PEP8](https://pep8.org/): was used to validate Python code for the website.
++ [Django-extensions](https://django-extensions.readthedocs.io/en/latest/) was used to create a Entity-Relationship Diagram.
 
 ## Features
 The following is a description of the features and functionality of the site. Please see the [testing](Testing) section for details of all aspects of functionality.
@@ -297,6 +294,46 @@ Data model for additional information about the user, such as postcode (to provi
 
 ## Testing
 
+### Manual testing
+
+| feature | action | expected result | tested | passed | comments |
+| --- | --- | --- | --- | --- | --- |
+| Navbar | | | | | |
+| Home | Click on the "Home" link | The user is redirected to the main page | Yes | Yes | - |
+| Packages | Click on the "Packages" link | The user is redirected to the Packages page | Yes | Yes | - |
+| Contact | Click on the "Contact" link | The user is redirected to the contact page | Yes | Yes | - |
+| Logo | Click on the logo | User is redirected to Home page | Yes | Yes | - | - |
+| Footer | | | | | |
+| Facebook link in the footer | Click on the Facebook link | The user is redirected to the Facebook page | Yes | Yes | - |
+| Twitter link in the footer | Click on the Twitter link | The user is redirected to the Twitter page | Yes | Yes | - |
+| Instagram link in the footer | Click on the Instagram link | The user is redirected to the Instagram page | Yes | Yes | - |
+| Contact Us link in the footer | Click on the Contact Us link | The user is redirected to the Contact/ Booking page | Yes | Yes | - |
+| Home page | | | | | |
+| Seafaring package link on Home Page | Click on the Seafaring package link | The user is redirected to the Seafaring package on the Packages page | Yes | Yes | - |
+| Camp package link on Home Page | Click on the Camp package link | The user is redirected to the Camp package on the Packages page | Yes | Yes | - |
+| Arts and Crafts package link on Home Page | Click on the Arts and Crafts package link | The user is redirected to the Arts and Crafts package on the Packages page | Yes | Yes | - |
+| E-mail link in Location section | Click on the E-mail link | The user is redirected to the an e-mail client | Yes | Yes | - |
+| Packages page | | | | | |
+| "Go to Contact/ Booking" button under Seafaring package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the contact page | Yes | Yes | - |
+| "Return to Home Page" link under Seafaring package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
+| "Return to Top" link under Seafaring package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
+ "Go to Contact/ Booking" button under Camp package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the contact page | Yes | Yes | - |
+| "Return to Home Page" link under Camp package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
+| "Return to Top" link under Camp package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
+| "Go to Contact/ Booking" button under Arts and Crafts package description | Click on the "Go to Contact/ Booking" button | The user is redirected to the Contact page | Yes | Yes | - |
+| "Return to Home Page" link under Arts and Crafts package description | Click on the "Return to Home Page" link | The user is redirected to the Home page | Yes | Yes | - |
+| "Return to Top" link under Arts and Crafts package description | Click on the "Return to Top" link | The user is redirected to the top of the Packages page | Yes | Yes | - |
+| Contact/ Booking page | | | | | |
+| Name input | Enter name | Name is entered and box changes colour from red to brown | Yes | Yes | If user does not enter a name, an error message appears on pressing the "Send !!!" button |
+| Email input | Enter email address | Email is entered and box changes colour from red to brown | Yes | Yes | If user does not enter an email address, an error message appears on pressing the "Send !!!" button |
+| Telephone input | Enter telephone number | Telephone number is entered | Yes | Yes | - |
+| Booking section checkboxes | Click on the checkboxes | The box is selected and displays a tick when clicked | Yes | Yes | - |
+| Booking section date selector (dropbox) | Click on the "Available Seafaring Dates" box (or Camp Dates or Arts and Crafts Dates) | A list of available dates drops down and a date can be selected | Yes | Yes | - |
+| Open text query field | Enter text | Text is entered | Yes | Yes | - |
+| Terms and Conditions link | Click on link | Terms and Conditions are loaded in a new window | Yes | Yes | - |
+| Preferred contact type radio boxes | Click on preferred radio box | Preferred radio box is marked | Yes | Yes | If user does not select a preferred contact type, an error message appears on pressing the "Send !!!" button |
+| "Send !!!" button | Click on the "Send !!!" button | The user is redirected to the Thank You page | Yes | Yes | If any of the required fields (name, email, preferred contact type) have not been completed, an error message appears |
+| E-mail link in Location section | Click on the E-mail link | The user is redirected to the an e-mail client | Yes | Yes | - |
 
 ## Deployment
 
