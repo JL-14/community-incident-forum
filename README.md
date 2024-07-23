@@ -259,7 +259,7 @@ All User Stories were assigned labels of 'Must Have', 'Could Have', or 'Nice to 
 The database used for the project is PostgreSQL, hosted by [ElephantSQL](https://www.elephantsql.com/). SQLite was used as backup database, and for automated Django testing purposes.
 
 ### Entity-Relationship Diagram
-[ERD](/documentation/images/ciif-erd.png)
+![ERD](/documentation/images/ciif-erd.png)
 
 ### Data Modelling
 #### Issue Model
