@@ -245,12 +245,12 @@ The wireframes for the site were developed using [Balsamiq](https://balsamiq.com
 An Agile methodology was adopted from start to finish for the development of the site. GitHub Project Management was used to manage the project, which facilitated the move from the aspirational initial design to the minimum viable product over the course of the work, moving the User Stories labeled as 'Nice to have' into the column for Future Deployments. 
 
 ### GitHub Project Management
-![](/documentation/images/github-project-board-1.png)
-![](/documentation/images/github-project-board-2.png)
+![Project Board 1](/documentation/images/github-project-board-1.png)
+![Project Board 2](/documentation/images/github-project-board-2.png)
 
 All User Stories were assigned labels of 'Must Have', 'Could Have', or 'Nice to Have'. The final product consists of the 'Must Have' User Stories, with two 'Could Have' User Stories and four additional 'Nice to Have' User Stories which could be accommodated within the project life.
 
-![](/documentation/images/github-project-board-labels.png)
+![Project Board Labels](/documentation/images/github-project-board-labels.png)
 
 ---
 
@@ -259,7 +259,7 @@ All User Stories were assigned labels of 'Must Have', 'Could Have', or 'Nice to 
 The database used for the project is PostgreSQL, hosted by [ElephantSQL](https://www.elephantsql.com/). SQLite was used as backup database, and for automated Django testing purposes.
 
 ### Entity-Relationship Diagram
-[](/documentation/images/ciif-erd.png)
+[ERD](/documentation/images/ciif-erd.png)
 
 ### Data Modelling
 #### Issue Model
