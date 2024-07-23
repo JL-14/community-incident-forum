@@ -31,7 +31,7 @@ class CommentAdmin(admin.ModelAdmin):
     """ Admin view for Comment """
     form = AdminCommentForm
     list_display = (
-        'approved', 'comment_author', 'comment_issue_title', 
+        'approved', 'comment_author', 'comment_issue_title',
         'created_on',
     )
     list_filter = ('approved', 'created_on')

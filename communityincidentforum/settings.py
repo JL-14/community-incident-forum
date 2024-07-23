@@ -19,11 +19,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-'127.0.0.1',
-'community-incident-forum-75e7791f6b68.herokuapp.com', 
-'localhost',
-'*.gitpod.io',
-'8000-jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net',
+    '127.0.0.1',
+    'community-incident-forum-75e7791f6b68.herokuapp.com',
+    'localhost',
+    '*.gitpod.io',
+    '8000-jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [

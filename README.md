@@ -149,8 +149,7 @@ There are a number of aspects to the site which holds great potential for furthe
 + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
 + [JShint](https://jshint.com/): was used to validate JS code for the website.
-+ [PEP8](https://pep8.org/): was used to validate Python code for the website.
-+ [Django-extensions](https://django-extensions.readthedocs.io/en/latest/) was used to create a Entity-Relationship Diagram.
++ [PEP8](https://pep8ci.herokuapp.com/): was used to validate Python PEP8-compliance for the website.
 
 ---
 
@@ -348,6 +347,8 @@ Data model for additional information about the user, such as postcode (to provi
 ---
 
 ## Testing
+In order to confirm the functionality, responsiveness and presentation of the website, it was extensively tested on a range of screen types and screen sizes, across Chrome, Firefox, and Edge browsers, and in various developer environments, including VS Code, GitPod, and Heroku.
+
 ### Manual testing
 
 | feature | action | expected result | tested | passed | comments |
@@ -394,19 +395,91 @@ Data model for additional information about the user, such as postcode (to provi
 ### Validator testing
 #### HTML Validation
 
+
 #### CSS Validation
 The W3C CSS validator found no errors, and provided 8 warnings ('Due to their dynamic nature, CSS variables are currently not statically checked') which refers to the not being able to check variables with dynamic content (content which interacts with other CSS code). The warnings have been manually explored and do not pose any issues.
 
 ![CSS Validator Feedback](/documentation/images/validator-css.png)
 
 #### JS Validation
-The JSHint validator was used to validate the JS file, and found no errors (but reported one undefined variable due to the use of the 'new' operator, which "lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function" (quote from [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) ) indicating that it is a user-defined object rather than a JS-defined variable.
+The JSHint validator was used to validate the JS file, and found no errors, but reported one undefined variable due to the use of 'bootstrap' in the code. Manual testing revealed no issues connected to the warning.
 
 ![JS Validator Feedback](/documentation/images/validator-js.png)
 
 #### Python Validation
+The Code Institute Python Linter was used to validate the Python code, checking for PEP8 compliance and errors. All files where Python was used (and the Django app-template amended) for the project were tested.
+
+* For the App ('forum')
+- admin.py
+No errors found.
+
+![admin.py validation](/documentation/images/validator-pep8-admin.png)
+
+- apps.py
+No errors found.
+
+![apps.py validation](/documentation/images/validator-pep8-apps.png)
+
+- forms.py
+No errors found.
+
+![forms.py validation](/documentation/images/validator-pep8-forms.png)
+
+- urls.py
+No errors found.
+
+![urls.py validation](/documentation/images/validator-pep8-urls.png)
+
+- views.py
+No errors found.
+
+![views.py validation](/documentation/images/validator-pep8-views.png)
+
+* For the programme ('communityincidentforum')
+- views.py
+No errors found.
+
+![views-higher-level validation](/documentation/images/validator-pep8-views-higher-level.png)
+
+- urls.py
+No errors found.
+
+![urls-higher-level validation](/documentation/images/validator-pep8-urls-higher-level.png)
+
+- settings.py
+5 lines identified as too long, but due to imported password validators so not possible to change.
+
+![settings.py validation](/documentation/images/validator-pep8-settings.png)
+
 
 #### Lighthouse Report
+
+## Bugs
+### Existing Bugs
+
+1. There is a warning in DevTools on Chrome and Firefox browsers stating that: 
+
+"DevTools failed to load source map: Could not load content for chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/sourceMap/chrome/scripts/content_autoplay_detection.js.map: System error: net::ERR_BLOCKED_BY_CLIENT"
+
+- The warning relates to the embedded Google Map in the Location section on the Home Page, and does not affect performance.
+
+2. The W3C CSS Validator returned five warnings relating to external third-party content in the code, none of which affect the user experience.
+
+3. On the very smallest screen sizes the word 'experiences' in the semi-transparent cover text box exceeds the background container, with the 'e' and the 's' appearing on or just outside the edge. 
+
+- The issue does not disrupt user experience, and will be addressed in future versions.
+
+4. At the smallest screen sizes (<400px) the edges of the header bar and footer bar are cropped -outside the on-screen display so does not affect user experience.
+
+- The issue will be addressed in future versions.
+
+### Solved Bugs
+- A number of bugs were solved throughout the design of the website, on a running basis.
+
+- The greatest number of bugs related to the use of flex-boxes, and were resolved through changing display types and layouts.
+
+- There were also bugs related to the use of fixed heights affecting the responsivity of the website, solved through replacing with relative values.
+
 ---
 
 ## Deployment
@@ -489,6 +562,10 @@ The JSHint validator was used to validate the JS file, and found no errors (but 
 ---
 
 ## Credits
+### Content
+- The idea, concept, and content for the website came from me (Jorgen Lovbakke).
+
+### Tools
 - [GitHub](https://github.com/) for providing the repository facilities and project management functionality.
 - [Django](https://www.djangoproject.com/) for the framework.
 - [Font awesome](https://fontawesome.com/): for the free access to icons.
@@ -498,8 +575,13 @@ The JSHint validator was used to validate the JS file, and found no errors (but 
 - [Coolors](https://coolors.co/): for providing a free platform to generate your own palette.
 - [Balsamiq](https://balsamiq.com/): for providing wireframe functionality for the project.
 
-## Acknowledgements
+---
 
+## Acknowledgements
+- [Juliia Konovalova](https://github.com/IuliiaKonovalova) for her invaluable support as Code Institute mentor for the project, for her insights and suggestions.
+- [Code Institute](https://codeinstitute.net/) and Slack community members for the teaching, tutor support, and resources for the project.
+- My wife, Joanne Lovbakke, for her patience with me whilst doing the project, and her amazing insights into design and layouts and for providing the photo used as main background.
+- Coders across the world offering their time and support on forums such as [Stack Overflow](https://stackoverflow.com/) and [Reddit](https://www.reddit.com/r/programming/).
 
 
 

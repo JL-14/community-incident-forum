@@ -104,6 +104,7 @@ class Issue(models.Model):
             self.slug = slugify(self.issue_title)
         super().save(*args, **kwargs)
 
+
 class Comment(models.Model):
     """ Fields for Comment module """
     comment_issue = models.ForeignKey(
