@@ -394,7 +394,19 @@ In order to confirm the functionality, responsiveness and presentation of the we
 
 ### Validator testing
 #### HTML Validation
+The W3C validator appears not to recognise the Django/ bootstrap structure used for this project (e.g. objecting to the use of {% %} type notation), and to pick up on errors from the Django core code. Code has been fed to the validator in chunks that do not contain Django code, which pass the tests without error. An example of the error feedback from the validator is:
 
+[Example of Django-related validator error](/documentation/images/validator-html-error-example.png)
+
+In this example of the code snippets fed to the validator (this time for index.html) producing errors relates to the lack of doctype and head from the start of the snippet (but identifying no other errors):
+
+[Example of Django-related validator feedback](/documentation/images/validator-index-error.png)
+
+The linter extensions used in GitPod identify 3 warnings (that are all to do with a Python extension not syncing with GitPod, but no errors or other warnings).
+
+[Linter warnings](/documentation/images/linter-feedback.png)
+
+There has been extensive manual checking of the html code, and feedback from other coders (including mentor).
 
 #### CSS Validation
 The W3C CSS validator found no errors, and provided 8 warnings ('Due to their dynamic nature, CSS variables are currently not statically checked') which refers to the not being able to check variables with dynamic content (content which interacts with other CSS code). The warnings have been manually explored and do not pose any issues.
@@ -453,32 +465,50 @@ No errors found.
 
 
 #### Lighthouse Report
+The Lighthouse reports highlight some issues that will be considered for future deployments, mainly in terms of performance and best practices. Whilst the website is fully functional, the current choice of database provider (based in the US) and the size and format of the main image are affecting the performance of the site. A new database provider will be used in future deployments, and the image will be altered. Other issues will also be addressed.
+
+* Home Page
+The Home page scores well on accessibility and search engine optimization, but less well on performance and best practices (largely due to the image format used for the background image). Issues affecting the scores will be addressed in future deployments.
+
+![Lighthouse report -Home Page](/documentation/images/lighthouse-home.png)
+
+* Report List page
+The Report List page scores well on accessibility and SEO, but again there are issues with performance and best practices (again largely due to the size and format of the placeholder and background image). Issues affecting the scores will be addressed in future deployments.
+
+![Lighthouse report -Report List](/documentation/images/lighthouse-reportlist.png)
+
+* Contact Us page
+The Contact Us page again scores well on accessibility and SEO, but there are continued issues with performance and best practices (again largely due to the size and format of the placeholder and background image). Issues affecting the scores will be addressed in future deployments.
+
+![Lighthouse report -Contact Us](/documentation/images/lighthouse-contact.png)
+
+* Report Detail page
+The Report Detail page scores well on SEO, but again there are issues with performance and best practices (again largely due to the size and format of the placeholder and background image), and this time the accessibility score is 89/100 due to issues with the contrast with buttons and the non-sequential order of Comments-heading and the Add Comment button. Issues affecting the scores will be addressed in future deployments.
+
+![Lighthouse report -Report Detail](/documentation/images/lighthouse-reportdetail.png)
+
+* Add Comment page
+The Add Comment page scores very well on accessibility and well on SEO, but there are continued issues with performance and best practices. Issues affecting the scores will be addressed in future deployments.
+
+![Lighthouse report -Add Comment](/documentation/images/lighthouse-addcomment.png)
 
 ## Bugs
 ### Existing Bugs
 
-1. There is a warning in DevTools on Chrome and Firefox browsers stating that: 
+1. There appears to be some instability with the use of Cloudinary for uploaded images and static files. The serving of static files has become less stable than is ideal for the site, especially in terms of uploaded images for new reports. This will be investigated further and addressed in future deployments.
 
-"DevTools failed to load source map: Could not load content for chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/sourceMap/chrome/scripts/content_autoplay_detection.js.map: System error: net::ERR_BLOCKED_BY_CLIENT"
+2. The process for approving comments on reports needs further attention and consideration, as they appear on the site (in shaded font) before approval, and also after rejection.
 
-- The warning relates to the embedded Google Map in the Location section on the Home Page, and does not affect performance.
+Whilst the shaded font indicates that the comments have not been approved or verified, the better approach would be for the comments not to show until approved. This will be investigated further and addressed in future deployments.
 
-2. The W3C CSS Validator returned five warnings relating to external third-party content in the code, none of which affect the user experience.
+3. In terms of responsiveness, for mobile phone-sized displays (screens less than 750px wide), the logo/ site name goes off the page (whilst the rest of the site adjusts as you would expect). This will be investigated further and addressed in future deployments.
 
-3. On the very smallest screen sizes the word 'experiences' in the semi-transparent cover text box exceeds the background container, with the 'e' and the 's' appearing on or just outside the edge. 
-
-- The issue does not disrupt user experience, and will be addressed in future versions.
-
-4. At the smallest screen sizes (<400px) the edges of the header bar and footer bar are cropped -outside the on-screen display so does not affect user experience.
-
-- The issue will be addressed in future versions.
+4. The performance of the site is slow, largely due to the database hosting server being based in the US. A new server will be found for future deployments.
 
 ### Solved Bugs
-- A number of bugs were solved throughout the design of the website, on a running basis.
+- A number of bugs were solved throughout the design of the website, on a running basis, using Chrome DevTools and online resources.
 
-- The greatest number of bugs related to the use of flex-boxes, and were resolved through changing display types and layouts.
-
-- There were also bugs related to the use of fixed heights affecting the responsivity of the website, solved through replacing with relative values.
+- The location of the static files was an issue before being fully loaded onto Cloudinary (having previously been split across Cloudinary and other providers), but performance remains variable.
 
 ---
 

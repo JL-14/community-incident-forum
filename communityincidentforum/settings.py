@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
     'community-incident-forum-75e7791f6b68.herokuapp.com',
     'localhost',
     '*.gitpod.io',
-    '8000-jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net',
+    '8000-jl14-communityinciden-qhxroynyap3.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
