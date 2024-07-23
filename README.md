@@ -108,7 +108,7 @@ There are a number of aspects to the site which holds great potential for furthe
 
 + Comprehensive list of contacts -Enabling users to easily find details of where to formally report an issue or incident
 
-+ Visitor monitoring functionality -Enabling admin users to easily see how many visits (unqiue and returning) there have been to the site to illustrate take-up of the site content. Most web hosting services will provide this.
++ Visitor monitoring functionality -Enabling admin users to easily see how many visits (unique and returning) there have been to the site to illustrate take-up of the site content. Most web hosting services will provide this.
 
 + Greater commercial presence -Opening up for advertising on the site, sale of the format and functionality to other towns and cities.
 
@@ -125,7 +125,7 @@ There are a number of aspects to the site which holds great potential for furthe
 
 ### Frameworks
 + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
-+ [Bootstratp](https://getbootstrap.com/): used as front-end CSS framework for responsiveness and pre-built components
++ [Bootstrap](https://getbootstrap.com/): used as front-end CSS framework for responsiveness and pre-built components
 
 ### Databases and storage
 + [ElephantSQL](https://www.elephantsql.com/) as main Postgres database (please note that ElephantSQL will cease operations in January 2025)
@@ -137,19 +137,19 @@ There are a number of aspects to the site which holds great potential for furthe
 + [Gunicorn](https://gunicorn.org/): the web server used to run the website.
 + [Psycopg2](https://www.psycopg.org/): the database driver used to connect to the database.
 + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
-+ [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
++ [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behaviour of Django forms.
 + [Summernote](https://summernote.org/): used as Bootstrap tool for managing the appearance and functionality of the administrative parts of the site
 + [GitHub](https://github.com/): used to host the website's source code.
 + [GitPod](https://www.gitpod.io/): used as the IDE for the final stages of the project.
 + [VSCode](https://code.visualstudio.com/): the IDE used for the early development stages, later replaced by GitPod.
 + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
-+ [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
-+ [Coolors](https://coolors.co/202a3c-1c2431-181f2a-0b1523-65e2d9-925cef-6b28e0-ffffff-eeeeee) was used to make a color palette for the website.
++ [Font Awesome](https://fontawesome.com/): was used to create the icons used on the website.
++ [Coolors](https://coolors.co/202a3c-1c2431-181f2a-0b1523-65e2d9-925cef-6b28e0-ffffff-eeeeee) was used to make a colour palette for the website.
 + [Balsamiq](https://balsamiq.com/) was used to develop wireframes for the project.
 + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
 + [JShint](https://jshint.com/): was used to validate JS code for the website.
-+ [PEP8](https://pep8ci.herokuapp.com/): was used to validate Python PEP8-compliance for the website.
++ [CI Python Linter](https://pep8ci.herokuapp.com/): was used to validate Python PEP8-compliance for the website.
 
 ---
 
@@ -161,7 +161,7 @@ The navbar is fixed in place, and appears on all pages. It features the site log
 
 There is an option to Register as a new user of the site, which opens a registration form which creates a new account. There is also an option to Log In (for existing users), which opens the login page where username and password allows the user to log in.
 
-There is a red box to the right of the screen which informs visitors that 'You are not logged in', which changes to a green box to inform users that 'You are logged in as (username)' once logged in. These boxes stay visible throughout the site. Finally, on the right hand side of the screen, there is a tagline which reads 'a community forum for issues and incidents in Reigate'.
+There is a red box to the right of the screen which informs visitors that 'You are not logged in', which changes to a green box to inform users that 'You are logged in as (username)' once logged in. These boxes stay visible throughout the site. Finally, on the right-hand side of the screen, there is a tagline which reads 'a community forum for issues and incidents in Reigate'.
 
 ![Navbar image](documentation/images/navbar-image.png)
 
@@ -194,7 +194,7 @@ Users who wish to edit their comment or update are taken back to the Add a Comme
 ![Add Comment page](documentation/images/addcomment-page.png)
 
 ### Contact Us page
-The Contact Us page has information on how to contact the forum, whether to to provide information about a new issue or incident, or to provide comments or suggestions. For new content, there is a link to a dedicated e-mail address ('report@reigatecommunityforum.co.uk') and instructions on what content needs to be included for a report to be created. Using an email-based submission process, the forum moderators have access to the submitters e-mail address for questions, queries, or missing information. There is a separate e-mail address for questions or suggestions for the moderators and developer ('info@reigatecommunityforum.co.uk').
+The Contact Us page has information on how to contact the forum, whether to provide information about a new issue or incident, or to provide comments or suggestions. For new content, there is a link to a dedicated e-mail address ('report@reigatecommunityforum.co.uk') and instructions on what content needs to be included for a report to be created. Using an email-based submission process, the forum moderators have access to the submitters e-mail address for questions, queries, or missing information. There is a separate e-mail address for questions or suggestions for the moderators and developer ('info@reigatecommunityforum.co.uk').
 
 ![Contact Us page](documentation/images/contact-page.png)
 
@@ -242,7 +242,7 @@ The wireframes for the site were developed using [Balsamiq](https://balsamiq.com
 ---
 
 ## Agile Methodology
-An Agile methodology was adopted from start to finish for the development of the site. GitHub Project Management was used to manage the project, which facilitated the move from the aspirational initial design to the minimum viable product over the course of the work, moving the User Stories labeled as 'Nice to have' into the column for Future Deployments. 
+An Agile methodology was adopted from start to finish for the development of the site. GitHub Project Management was used to manage the project, which facilitated the move from the aspirational initial design to the minimum viable product over the course of the work, moving the User Stories labelled as 'Nice to have' into the column for Future Deployments. 
 
 ### GitHub Project Management
 ![Project Board 1](/documentation/images/github-project-board-1.png)
@@ -354,7 +354,7 @@ In order to confirm the functionality, responsiveness and presentation of the we
 | feature | action | expected result | tested | passed | comments |
 | --- | --- | --- | --- | --- | --- |
 | Navbar | | | | | |
-| Logo/ Name of site | Click on the the logo/ site-name | The user is directed to the Home page | Yes | Yes | - |
+| Logo/ Name of site | Click on the logo/ site-name | The user is directed to the Home page | Yes | Yes | - |
 | Home link | Click on the "Home" link | The user is directed to the Home page | Yes | Yes | - |
 | Report List link | Click on the "Report List" link | The user is directed to the Report List page | Yes | Yes | - |
 | Contact Us link | Click on the "Contact Us" link | User is directed to "Sign In" page | Yes | Yes | - | - |
@@ -495,26 +495,24 @@ The Add Comment page scores very well on accessibility and well on SEO, but ther
 ## Bugs
 ### Existing Bugs
 
-1. There appears to be some instability with the use of Cloudinary for uploaded images and static files. The serving of static files has become less stable than is ideal for the site, especially in terms of uploaded images for new reports. This will be investigated further and addressed in future deployments.
-
-2. The process for approving comments on reports needs further attention and consideration, as they appear on the site (in shaded font) before approval, and also after rejection.
+1. The process for approving comments on reports needs further attention and consideration, as they appear on the site (in shaded font) before approval, and also after rejection.
 
 Whilst the shaded font indicates that the comments have not been approved or verified, the better approach would be for the comments not to show until approved. This will be investigated further and addressed in future deployments.
 
-3. In terms of responsiveness, for mobile phone-sized displays (screens less than 750px wide), the logo/ site name goes off the page (whilst the rest of the site adjusts as you would expect). This will be investigated further and addressed in future deployments.
+2. In terms of responsiveness, for mobile phone-sized displays (screens less than 750px wide), the logo/ site name goes off the page (whilst the rest of the site adjusts as you would expect). This will be investigated further and addressed in future deployments.
 
-4. The performance of the site is slow, largely due to the database hosting server being based in the US. A new server will be found for future deployments.
+3. The performance of the site is slow, largely due to the database hosting server being based in the US. A new server will be found for future deployments.
 
 ### Solved Bugs
 - A number of bugs were solved throughout the design of the website, on a running basis, using Chrome DevTools and online resources.
 
-- The location of the static files was an issue before being fully loaded onto Cloudinary (having previously been split across Cloudinary and other providers), but performance remains variable.
+- The location of the static files was an issue before being fully loaded onto Cloudinary (having previously been split across Cloudinary and other providers).
 
 ---
 
 ## Deployment
 - The programme was deployed to [Heroku](https://dashboard.heroku.com/apps/community-incident-forum).
-- The programme can be reached by the [link](https://community-incident-forum-75e7791f6b68.herokuapp.com/)
+- The app can be reached by the [link](https://community-incident-forum-75e7791f6b68.herokuapp.com/)
 
 ### Deploying the project as an application running locally:
 
@@ -536,9 +534,9 @@ Whilst the shaded font indicates that the comments have not been approved or ver
         2. Run the following command
         - `git clone https://github.com/JL-14/community-incident-forum.git`
 
-    - Alternatively, if using Gitpod, you can use the link below to create your own workspace using this repository.
+    - Alternatively, if using GitPod, you can use the link below to create your own workspace using this repository.
 
-    [Open in Gitpod](https://jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net/)
+    [Open in GitPod](https://jl14-communityinciden-u2yc7ql938w.ws.codeinstitute-ide.net/)
 
   4. Install Python module dependencies:
      
