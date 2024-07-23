@@ -126,7 +126,6 @@ There are a number of aspects to the site which holds great potential for furthe
 ### Frameworks
 + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
 + [Bootstratp](https://getbootstrap.com/): used as front-end CSS framework for responsiveness and pre-built components
-+ [Summernote](https://summernote.org/): used as Bootstrap tool for managing the appearance and functionality of the administrative parts of the site
 
 ### Databases and storage
 + [ElephantSQL](https://www.elephantsql.com/) as main Postgres database (please note that ElephantSQL will cease operations in January 2025)
@@ -139,6 +138,7 @@ There are a number of aspects to the site which holds great potential for furthe
 + [Psycopg2](https://www.psycopg.org/): the database driver used to connect to the database.
 + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
 + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
++ [Summernote](https://summernote.org/): used as Bootstrap tool for managing the appearance and functionality of the administrative parts of the site
 + [GitHub](https://github.com/): used to host the website's source code.
 + [GitPod](https://www.gitpod.io/): used as the IDE for the final stages of the project.
 + [VSCode](https://code.visualstudio.com/): the IDE used for the early development stages, later replaced by GitPod.
