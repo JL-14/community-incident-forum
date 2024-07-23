@@ -387,7 +387,7 @@ In order to confirm the functionality, responsiveness and presentation of the we
 | Submitted comments | Click on a submitted comment awaiting approval | The admin is directed to the comment details | Yes | Yes | - |
 | Comment awaiting approval | Check box for 'Approved' status | The comment shows as approved in clear text on the Report Detail page | Yes | Yes | - |
 | Add issue button | Click on the "Add issue" button | A New Issue page appears with the expected fields | Yes | Yes | - |
-| Upload image option | Click to choose file | The image appears instead of placeholder image on Report List and Report Detail pages | Yes | No | Image only appears after 'python manage.py collectstatic' is run |
+| Upload image option | Click to choose file | The image appears instead of placeholder image on Report List and Report Detail pages | Yes | Yes | - |
 | Admin permissions | Try to access admin panel as a non-admin user | Access is denied | Yes | Yes | - |
 | User registration | Complete user registration process | The new user is created | Yes | Yes | - |
 
