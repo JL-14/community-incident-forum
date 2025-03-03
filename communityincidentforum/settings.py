@@ -4,12 +4,14 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
-
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+# if os.path.isfile('env.py'):
+#     import env
+from dotenv import load_dotenv
+load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -93,11 +95,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'communityincidentforum.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-
-if 'test' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
